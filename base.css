@@ -253,3 +253,8 @@ details.menu{border:0;padding:0}
 @media(max-width:760px){.orrery .deg{display:none}}
 .plate img.bot{width:30%!important}.plate .glow{inset:31%!important}
 .plate{width:min(480px,86vw)!important}.plate img.bot{width:24%!important}.plate .glow{inset:34%!important}
+.plate img.bot{animation:none!important;width:19%!important;filter:drop-shadow(0 0 14px rgba(255,214,120,.35))}
+.plate{width:min(560px,90vw)!important}.plate .glow{inset:37%!important;background:radial-gradient(closest-side,rgba(255,210,120,.28),transparent)!important}
+.orrery .plabel{font:500 5.2px 'IBM Plex Mono',monospace;letter-spacing:.06em;fill:var(--ink-o);opacity:.8;text-transform:uppercase}
+@media(max-width:760px){.orrery .plabel{display:none}}
+@media(max-width:760px){.plate{width:80vw!important}}
