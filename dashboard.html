@@ -1,29 +1,33 @@
-<!doctype html><html data-theme="dark"><head><meta charset=utf-8><meta name="robots" content="noindex"><style>.pv-label{position:fixed;bottom:12px;right:12px;z-index:9999;background:#c9a54a;color:#111;font:600 12px/1 sans-serif;padding:7px 10px;border-radius:4px;opacity:.92;pointer-events:none}</style><meta name=viewport content="width=device-width"><link rel=stylesheet href=base.css><style>
-.wrap{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 66px)}
-aside{border-right:1px solid var(--line);padding:24px 20px}aside a{display:block;padding:7px 0;text-decoration:none;color:var(--mute)}aside a.on{color:var(--ink);border-left:2px solid var(--acc);padding-left:10px}
-main{padding:36px 4vw}main h1{font-size:40px}
-.sum{display:flex;gap:40px;margin:20px 0 36px;padding:18px 0;border-block:1px solid var(--line)}
-.sec{margin-bottom:36px}.sec h2{font-size:22px;margin-bottom:6px}
+<!doctype html><html data-theme="dark" lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Lumo dashboard — redesign preview</title><link rel=stylesheet href=base.css><style>
+.wrap{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 67px)}
+aside{border-right:1px solid var(--line);padding:28px 22px;background:var(--bg);display:flex;flex-direction:column}
+aside a{display:block;padding:7px 0;text-decoration:none;color:var(--mute)}aside a.on{color:var(--ink);border-left:2px solid var(--acc);padding-left:10px}
+.comp{margin-top:auto;padding-top:28px;display:flex;gap:10px;align-items:flex-end}.comp img{width:64px}.comp p{font-size:13px;color:var(--mute);border:1px solid var(--line);padding:8px 10px;background:var(--panel)}
+main{padding:44px 4vw 64px;max-width:960px}main h1{font-size:44px}
+.sum{display:flex;gap:48px;margin:22px 0 44px;padding:18px 0;border-block:1px solid var(--line)}
+.sec{margin-bottom:48px}.sec h2{font-size:24px;margin-bottom:8px;display:flex;align-items:center}
 .rows{border-top:1px solid var(--ink)}
-.row{display:grid;grid-template-columns:36px 1fr auto;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
-.row img{width:26px}.row p{color:var(--mute);font-size:14px}.row b{font-weight:500}
+.row{display:grid;grid-template-columns:36px 1fr auto;gap:16px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line);background:var(--bg)}
+.row img{width:24px}.row p{color:var(--mute);font-size:14px}.row b{font-weight:500}
 .tg{width:42px;height:22px;border:1px solid var(--line);position:relative}.tg::after{content:'';position:absolute;top:3px;left:3px;width:14px;height:14px;background:var(--mute)}
 .tg.on{background:var(--acc);border-color:var(--acc)}.tg.on::after{left:23px;background:var(--bg)}
-.tag{font-family:'IBM Plex Mono';font-size:11px;border:1px solid var(--gold);color:var(--gold);padding:1px 6px;margin-left:8px}
+.tag{font-family:'IBM Plex Mono';font-size:11px;border:1px solid var(--gold);color:var(--gold);padding:1px 6px;margin-left:10px;font-weight:400}
 .prof{display:flex;align-items:center;gap:8px}.av{width:30px;height:30px;background:var(--acc)}
-@media(max-width:700px){.wrap{grid-template-columns:1fr}aside{display:flex;gap:16px;overflow:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px 5vw;white-space:nowrap}aside{align-self:start;height:auto}.wrap{grid-template-rows:auto 1fr;align-content:start}aside a{flex:none}aside a.on{border-left:0;border-bottom:2px solid var(--acc);padding-left:0}.sum{gap:20px;flex-wrap:wrap}main h1{font-size:30px}}
+@media(max-width:700px){.wrap{grid-template-columns:1fr;grid-template-rows:auto 1fr;align-content:start}aside{flex-direction:row;gap:18px;overflow:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px 5vw;white-space:nowrap}aside a{flex:none}aside a.on{border-left:0;border-bottom:2px solid var(--acc);padding-left:0}aside .comp{display:none}.mcomp{display:flex!important}.sum{gap:22px;flex-wrap:wrap}main{padding:32px 5vw 64px}main h1{font-size:32px}}
 </style></head><body>
-<header><a href="index.html" style="margin-right:12px">← Home</a><span class=brand><img class=px src=star.png width=22>Lumo</span><span class=mono style="margin-left:auto">Dashboard</span><button class=hbtn>♪ Music</button><span class=prof><span class=av></span><span>Oriyi</span></span></header>
-<div class=wrap><aside><a class=on>Overview</a><a>Starkeepers</a><a>Levels</a><a>Welcome</a><a>Roles</a><a>AutoMod</a><a>Logs</a><a>Premium</a></aside>
-<main><p class=mono>Server overview</p><h1>The Night Owls</h1>
+<header><a href=index.html class=hide-m style="text-decoration:none">← Home</a><a class=brand href=index.html><img class=px src=star.png width=22 alt="">Lumo</a><span class="mono hide-m" style="margin-left:auto">Dashboard</span><button class="hbtn push" onclick="t()">☾</button><button class=hbtn>♪ Music</button><span class=prof><span class=av></span><span class=hide-m>Oriyi</span></span></header>
+<div class=wrap><aside><a class=on>Overview</a><a>Starkeepers</a><a>Levels</a><a>Welcome</a><a>Roles</a><a>AutoMod</a><a>Logs</a><a>Premium</a><a href=index.html class=mcomp style="display:none">← Home</a>
+<div class=comp><img src=salute-192.webp alt="Lumo saluting"><p>Hi! Each feature has its own switch.</p></div></aside>
+<main><div class="mcomp comp" style="display:none;margin:0 0 20px;padding:0"><img src=salute-192.webp alt="Lumo saluting" style="width:48px"><p>Hi! Each feature has its own switch.</p></div><p class=mono>Server overview</p><h1>The Night Owls</h1>
 <div class=sum><div><p class=mono>Premium</p><b>Not active</b></div><div><p class=mono>Moon tonight</p><b>Full</b></div><div><p class=mono>Language</p><b>English</b></div></div>
 <div class=sec><h2>Starkeepers <span class=tag>BETA</span></h2><div class=rows>
-<div class=row><img class="px bob" src=star.png><div><b>Nightly catches</b><p>Members catch one star a night with /sky catch.</p></div><span class="tg on"></span></div>
-<div class=row><img class="px bob" src=moon-eclipse.png style="animation-delay:.6s"><div><b>Hunts</b><p>Wild stars appear and the server fights them together.</p></div><span class="tg on"></span></div>
-<div class=row><img class="px bob" src=moon-full.png style="animation-delay:1.2s"><div><b>Observatory &amp; bosses</b><p>Shared server sky and boss stars.</p></div><span class="tg on"></span></div></div></div>
+<div class=row><img class="px bob" src=star.png alt=""><div><b>Nightly catches</b><p>Members catch one star a night with /sky catch.</p></div><span class="tg on"></span></div>
+<div class=row><img class="px bob" src=moon-eclipse.png style="animation-delay:.6s" alt=""><div><b>Hunts</b><p>Wild stars appear and the server fights them together.</p></div><span class="tg on"></span></div>
+<div class=row><img class="px bob" src=moon-full.png style="animation-delay:1.2s" alt=""><div><b>Observatory &amp; bosses</b><p>Shared server sky and boss stars.</p></div><span class="tg on"></span></div></div></div>
 <div class=sec><h2>Server</h2><div class=rows>
-<div class=row><img class="px bob" src=star.png style="animation-delay:.3s"><div><b>Levels</b><p>Chat XP and level-up cards.</p></div><span class="tg on"></span></div>
-<div class=row><img class="px bob" src=star.png style="animation-delay:.9s"><div><b>Welcome cards</b><p>Greet new members in a channel you pick.</p></div><span class=tg></span></div>
-<div class=row><img class="px bob" src=star.png style="animation-delay:1.5s"><div><b>AutoMod</b><p>Light filtering for spam and links.</p></div><span class=tg></span></div>
-<div class=row><img class="px bob" src=moon-full.png style="animation-delay:2s"><div><b>AI chat <span class=tag>PREMIUM</span></b><p>AI-powered chat for the whole server.</p></div><span class=tg></span></div></div></div>
-</main></div><div class=pv-label>Preview, not live</div></body></html>
+<div class=row><img class="px bob" src=star.png style="animation-delay:.3s" alt=""><div><b>Levels</b><p>Chat XP and level-up cards.</p></div><span class="tg on"></span></div>
+<div class=row><img class="px bob" src=star.png style="animation-delay:.9s" alt=""><div><b>Welcome cards</b><p>Greet new members in a channel you pick.</p></div><span class=tg></span></div>
+<div class=row><img class="px bob" src=star.png style="animation-delay:1.5s" alt=""><div><b>AutoMod</b><p>Light filtering for spam and links.</p></div><span class=tg></span></div>
+<div class=row><img class="px bob" src=moon-full.png style="animation-delay:2s" alt=""><div><b>AI chat <span class=tag>PREMIUM</span></b><p>AI-powered chat for the whole server.</p></div><span class=tg></span></div></div></div>
+</main></div><div class=pv-label>Preview, not live</div>
+<script>function t(){var d=document.documentElement;d.dataset.theme=d.dataset.theme=='dark'?'light':'dark'}</script></body></html>
