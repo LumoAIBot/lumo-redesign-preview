@@ -259,3 +259,17 @@ details.menu{border:0;padding:0}
 @media(max-width:760px){.orrery .plabel{display:none}}
 @media(max-width:760px){.plate{width:80vw!important}}
 .hero{overflow-x:clip}@media(max-width:760px){.plate{width:76vw!important}}
+/* ===== containment fix ===== */
+.hero>*{min-width:0}
+.plate{width:min(560px,100%)!important;max-width:100%;aspect-ratio:1;justify-self:center;container-type:inline-size;margin-bottom:56px!important}
+.orrery{inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important}
+.plate figcaption{position:absolute;top:calc(100% + 16px)!important;left:0!important;width:100%!important;text-align:center;line-height:1.4}
+@container (max-width:480px){.orrery .deg,.orrery .plabel{display:none}}
+@media(max-width:1060px){.hero{grid-template-columns:1fr!important}.hero .plate,.hero .fig{order:-1;width:min(520px,100%)!important}}
+@media(max-width:760px){.plate{width:min(420px,100%)!important}}
+/* spacing: kickers never touch the big headings */
+h1{line-height:1.08!important}.hero h1{padding-top:4px}
+.hero .mono:first-child,.hero>div>.mono:first-child,.ph .mono,.legal-head>*:first-child{margin-bottom:14px;display:block}
+.ph h1{margin-bottom:6px}.ph .help{margin-top:4px}
+.legal-head h1+p,.legal-head p{margin-top:14px}
+.side .off{display:block;padding:6px 0;color:var(--mute);opacity:.55;font-size:15px;cursor:default}@media(max-width:760px){.side .off{display:none}}
