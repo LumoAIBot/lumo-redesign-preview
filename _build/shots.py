@@ -7,6 +7,6 @@ with sync_playwright() as p:
         for w,n in[(1440,'desktop'),(390,'mobile')]:
             for t in modes:
                 pg=b.new_page(viewport={'width':w,'height':900},device_scale_factor=1)
-                pg.add_init_script(f"localStorage.setItem('lumo-prev-theme','{t}')")
+                pg.add_init_script(f"localStorage.setItem('aeth-theme','{t}')")
                 pg.goto(f'http://localhost:8811/{pg_}.html');pg.evaluate('''async()=>{for(let y=0;y<document.body.scrollHeight;y+=500){scrollTo(0,y);await new Promise(r=>setTimeout(r,60))}scrollTo(0,0);document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'))}''');pg.wait_for_timeout(1000)
                 pg.screenshot(path=f'/workspace/review_oct24/redesign/shots/{pg_}-{n}-{t}.png',full_page=True);pg.close()

@@ -216,8 +216,8 @@ h1 em,.hero h1 em{color:var(--gold)}
 .spot-band{position:relative;margin:var(--s5) 0;padding:var(--s6) 5vw;display:grid;grid-template-columns:1.15fr .85fr;gap:5vw;align-items:center;border-block:1px solid color-mix(in srgb,var(--vio2) 40%,transparent);background:color-mix(in srgb,var(--vio2) 9%,transparent)}
 .spot-band h2{font-size:clamp(32px,4vw,56px)}.spot-band h2 em{color:var(--gold);font-weight:400}.spot-band>div>*+*{margin-top:var(--s2)}
 .spot-band .fig{transform:rotate(-1.2deg)}
-.moonrow{display:flex;gap:14px;align-items:center;margin-top:var(--s3)}.moonrow i{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--gold);display:block}
-.moonrow i:nth-child(1){box-shadow:inset 6px 0 0 var(--gold)}.moonrow i:nth-child(2){box-shadow:inset 9px 0 0 var(--gold)}.moonrow i:nth-child(3){background:var(--gold)}.moonrow i:nth-child(4){box-shadow:inset -9px 0 0 var(--gold)}.moonrow i:nth-child(5){box-shadow:inset -6px 0 0 var(--gold)}
+.moonrow{display:flex;gap:14px;align-items:center;margin-top:var(--s3)}
+
 /* motion */
 html.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}html.js .rv.in{opacity:1;transform:none}
 .btn{transition:transform .15s,box-shadow .15s}.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--gold)}
@@ -281,3 +281,38 @@ main .btn.sm{margin-top:4px}
 button.btn.sm,.btn.sm{font-size:13px;padding:8px 12px}
 @media (max-width:800px){aside.side{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);padding-right:40px}}
 h1,h2,h3{text-wrap:balance;hyphens:manual}
+
+/* moon phases */
+.moonrow{flex-wrap:wrap;row-gap:8px}
+.moonrow svg.moon{flex:none;width:24px;height:24px;display:block}
+svg.moon .m-dark{fill:#1b1d2b}svg.moon .m-rim{stroke:#f1e2b4;stroke-opacity:.35;stroke-width:.5}
+[data-theme=light] svg.moon .m-dark{fill:#3a3550}[data-theme=light] svg.moon .m-rim{stroke:#3a3550;stroke-opacity:.6}
+.moonrow .mono{flex:1 1 200px}
+/* theme menu + music (logic shared with lumobot.org) */
+.theme-pop{position:relative;display:inline-flex}
+.theme-btn{width:34px;height:32px;display:inline-grid;place-items:center;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;padding:0;position:relative}
+.theme-btn svg{width:16px;height:16px}
+.theme-btn .ti{display:none}
+[data-theme-pref=dark] .theme-btn .ti-dark,[data-theme-pref=light] .theme-btn .ti-light,[data-theme-pref=auto] .theme-btn .ti-auto,html:not([data-theme-pref]) .theme-btn .ti-dark{display:block}
+.theme-btn[aria-expanded=true]{border-color:var(--acc)}
+.theme-menu{position:absolute;right:0;top:calc(100% + 10px);z-index:70;width:min(300px,calc(100vw - 24px));display:grid;gap:14px;padding:14px;background:var(--bg);border:1px solid var(--line);box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.theme-menu[hidden]{display:none}
+.theme-seg-wrap{display:grid;gap:8px}
+.theme-seg-wrap>span{font:11px/1.2 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--muted,var(--ink))}
+.theme-seg-wrap small{text-transform:none;letter-spacing:0;opacity:.8;margin-left:4px}
+.theme-seg{display:flex;gap:4px}
+.seg-b,.hol-b{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:0 8px;border:1px solid var(--line);background:none;color:var(--ink);font:500 13px 'IBM Plex Sans',sans-serif;cursor:pointer}
+.seg-b svg,.hol-b svg{width:15px;height:15px}
+.seg-b[aria-pressed=true],.hol-b[aria-pressed=true]{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 14%,transparent)}
+.hol-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.hol-b{grid-column:span 3}
+.hol-halloween,.hol-thanksgiving,.hol-christmas{grid-column:span 2;flex-direction:column;gap:2px;min-height:54px;font-size:12px}
+.hol-b .he{font-size:18px;line-height:1}
+.theme-btn::after{position:absolute;right:-6px;top:-7px;font-size:12px;line-height:1;pointer-events:none}
+[data-holiday=halloween] .theme-btn::after{content:"\1F383"}[data-holiday=thanksgiving] .theme-btn::after{content:"\1F342"}[data-holiday=christmas] .theme-btn::after{content:"\1F384"}
+.lumo-music{width:34px;height:32px;display:inline-grid;place-items:center;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;padding:0}
+.lumo-music svg{width:16px;height:16px}
+.lumo-music .lm-x{display:inline}.lumo-music.is-on .lm-x{display:none}
+.lumo-music.is-on{border-color:var(--acc);color:var(--acc)}
+.lumo-music:not(.in-bar){position:fixed;right:16px;bottom:64px;z-index:60;background:var(--bg)}
+.lumo-fx{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}

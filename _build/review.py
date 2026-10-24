@@ -11,7 +11,7 @@ with sync_playwright() as p:
     b=p.chromium.launch()
     for th in ['dark','light']:
         for w in [390,900,1440]:
-            pg=b.new_page(viewport={'width':w,'height':1000});pg.add_init_script(f"localStorage.setItem('lumo-prev-theme','{th}')")
+            pg=b.new_page(viewport={'width':w,'height':1000});pg.add_init_script(f"localStorage.setItem('aeth-theme','{th}')")
             for n in pages:
                 pg.goto('http://localhost:8811/'+n);pg.evaluate("document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'))");pg.wait_for_timeout(250)
                 pg.screenshot(path=f'review/{n[:-5]}-{w}-{th}.png',full_page=True)

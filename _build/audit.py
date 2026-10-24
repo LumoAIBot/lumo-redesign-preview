@@ -31,7 +31,7 @@ with sync_playwright() as p:
     b=p.chromium.launch()
     for theme in ['dark','light']:
         for w in WIDTHS:
-            pg=b.new_page(viewport={'width':w,'height':900});pg.add_init_script(f"localStorage.setItem('lumo-prev-theme','{theme}')")
+            pg=b.new_page(viewport={'width':w,'height':900});pg.add_init_script(f"localStorage.setItem('aeth-theme','{theme}')")
             for n in pages:
                 pg.goto(f'{BASE}/{n}');pg.evaluate("document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'))");pg.wait_for_timeout(100)
                 r=pg.evaluate(JS)

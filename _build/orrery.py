@@ -1,3 +1,4 @@
+from moons import orbit_moon
 """Hand-built SVG orrery for the hero plates. Lumo is the sun; one body per orbit, no crossings,
 periods follow Kepler (T ~ a^1.5), everything turns the same way. check() asserts the clearances."""
 import random, math
@@ -9,7 +10,7 @@ def soft(uid): return f'url(#sf{uid})'
 KINDS={
  'rocky':  dict(r=5.8,ext=lambda r:r+1.5),
  'mars':   dict(r=6.5,  ext=lambda r:r+1.5),
- 'cloud':  dict(r=7.2,ext=lambda r:r*1.7+2+1),   # has a moon
+ 'cloud':  dict(r=7.2,ext=lambda r:r*1.7+2.6+1),   # has a moon
  'gas':    dict(r=11.5, ext=lambda r:r+2),
  'ringed': dict(r=9,ext=lambda r:r*1.9+1),
  'ice':    dict(r=8,ext=lambda r:r+2),
@@ -87,13 +88,13 @@ def planet(kind,x,y,r,uid,R,spd,label=''):
     if kind=='cloud':
         mr=r*1.7
         o.append(f'<circle cx="{x}" cy="{y}" r="{mr:.1f}" fill="none" stroke="var(--ink-o)" stroke-width=".4" stroke-dasharray="1 3" opacity=".5"/>'
-                 f'<g class="spin" style="animation-duration:13.5s;transform-origin:{x:.1f}px {y:.1f}px"><circle cx="{x+mr:.1f}" cy="{y}" r="2" fill="#d9d3c4"/><circle cx="{x+mr+.7:.1f}" cy="{y}" r="2" fill="{SHADE}" opacity=".35"/></g>')
+                 f'<g class="spin" style="animation-duration:13.5s;transform-origin:{x:.1f}px {y:.1f}px"><g class="spin rev" style="animation-duration:13.5s;transform-origin:{x+mr:.1f}px {y:.1f}px">'+orbit_moon(x+mr,y,2.6,math.atan2(200-y,200-x-mr),pid)+'</g></g>')
     return ''.join(o)
 # The real solar system, compressed for looks: radius ~ (true radius)^0.4, distance ~ log(AU) then nudged
 # apart so nothing touches, period = 21.15 s * years^0.315 (Mercury ~9 s, Neptune ~70 s; every rank kept).
 SOL=[('Mercury','rocky',0.383,0.387,0.241),('Venus','venus',0.949,0.723,0.615),('Earth','cloud',1.0,1.0,1.0),('Mars','mars',0.532,1.524,1.881),
      ('Jupiter','gas',11.21,5.203,11.86),('Saturn','ringed',9.45,9.537,29.46),('Uranus','ice',4.01,19.19,84.0),('Neptune','neptune',3.88,30.07,164.8)]
-EXTF={'rocky':lambda r:r+1,'venus':lambda r:r+1,'cloud':lambda r:r*1.7+2+.8,'mars':lambda r:r+1,'gas':lambda r:r+1.5,'ringed':lambda r:r*1.95+r*.11+.5,'ice':lambda r:r*1.65+.8,'neptune':lambda r:r+1}
+EXTF={'rocky':lambda r:r+1,'venus':lambda r:r+1,'cloud':lambda r:r*1.7+2.6+.8,'mars':lambda r:r+1,'gas':lambda r:r+1.5,'ringed':lambda r:r*1.95+r*.11+.5,'ice':lambda r:r*1.65+.8,'neptune':lambda r:r+1}
 def solve(k):
     rs=[k*t**0.4 for _,_,t,_,_ in SOL]; ext=[EXTF[kind](r) for (_,kind,_,_,_),r in zip(SOL,rs)]
     la=[math.log(a) for *_,a,_ in SOL]; lo,hi=LUMO_R,HI
