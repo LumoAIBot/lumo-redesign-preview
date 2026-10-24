@@ -251,3 +251,4 @@ details.menu{border:0;padding:0}
 .plate img.bot{z-index:1}
 @media (prefers-reduced-motion:reduce){.orrery .spin,.orrery .twk,.orrery .rings{animation:none}}
 @media(max-width:760px){.orrery .deg{display:none}}
+.plate img.bot{width:30%!important}.plate .glow{inset:31%!important}@media(max-width:760px){.plate img.bot{width:32%!important}}
