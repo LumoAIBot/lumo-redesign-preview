@@ -121,8 +121,8 @@ def page(name,n):
     if name=='commands': html_+='<script>var q=document.getElementById("q");q&&q.addEventListener("input",function(){var v=q.value.toLowerCase();document.querySelectorAll(".cmd").forEach(function(c){c.hidden=v&&c.textContent.toLowerCase().indexOf(v)<0})})</script>'
     return html_+TAIL
 
-REWRITE=[('Everything Lumo can do','What Lumo does, roughly in order of how much fun it is'),('Small features, big difference','And a pile of smaller things'),('Music that just works','Music, from SoundCloud'),
-('Unlock the AI side of your server','Premium: the AI-powered part of Lumo'),('Questions, answered','Questions people actually asked'),('No surprises','Renewals, plainly'),('Three steps','How to get it')]
+REWRITE=[(' colours',' colors'),('Everything Lumo can do','What Lumo does, roughly in order of how much fun it is'),('Small features, big difference','And a pile of smaller things'),('Music that just works','Music, from SoundCloud'),
+('Unlock the AI side of your server','Premium: the AI&#8209;powered part of Lumo'),('Questions, answered','Questions people actually asked'),('No surprises','Renewals, plainly'),('Three steps','How to get it')]
 for n,name in enumerate([p for p in PAGES if p!='status']):
     fn=RENAME.get(name+'.html',name+'.html'); h=page(name,(n%12)+1)
     if name not in('privacy','terms'):
@@ -206,9 +206,9 @@ dash('dashboard-starkeepers.html','Starkeepers','The shared night sky your membe
 asset('assets/starkeepers-sky-1200.webp')
 dash('dashboard-settings.html','Settings','Pick a channel or role from the lists and press Save. Changes apply right away.','assets/robot/working-96.webp',
  '<p class=jump><a href=#welcome>Welcome</a><a href=#autorole>Join role</a><a href=#logs>Server logs</a><a href=#language>Language</a></p>'
- '<section class=set id=welcome><h2>Welcome new members <span class="pill ok">On</span></h2><p class=help>Lumo greets new members in the channel you pick.</p><label>Welcome channel<small>Only channels Lumo can post in are listed.</small><select><option>#welcome</option></select></label><button class=btn>Save welcome channel</button></section>'
- '<section class=set id=autorole><h2>Join role <span class="pill bad">Off</span></h2><p class=help>Gives every new member a role automatically when they join.</p><label>Role for new members<small>Only roles below Lumo\'s own role can be handed out, so only those are listed.</small><select><option>Off (no join role)</option></select></label><button class=btn>Save join role</button></section>'
- '<section class=set id=logs><h2>Server logs <span class="pill bad">Off</span></h2><p class=help>A private record of what happens in your server, for moderators.</p><label>Log channel<select><option>No log channel yet</option></select></label><button class=btn>Save server logs</button></section>'
- '<section class=set id=language><h2>Language</h2><label>Lumo\'s language in this server<select><option>English</option></select></label><button class=btn>Save language</button></section>')
+ '<section class=set id=welcome><h2>Welcome new members <span class="pill ok">On</span></h2><p class=help>Lumo greets new members in the channel you pick.</p><label>Welcome channel<small>Only channels Lumo can post in are listed.</small><select><option>#welcome</option></select></label><button class="btn sm">Save welcome channel</button></section>'
+ '<section class=set id=autorole><h2>Join role <span class="pill bad">Off</span></h2><p class=help>Gives every new member a role automatically when they join.</p><label>Role for new members<small>Only roles below Lumo\'s own role can be handed out, so only those are listed.</small><select><option>Off (no join role)</option></select></label><button class="btn sm">Save join role</button></section>'
+ '<section class=set id=logs><h2>Server logs <span class="pill bad">Off</span></h2><p class=help>A private record of what happens in your server, for moderators.</p><label>Log channel<select><option>No log channel yet</option></select></label><button class="btn sm">Save server logs</button></section>'
+ '<section class=set id=language><h2>Language</h2><label>Lumo\'s language in this server<select><option>English</option></select></label><button class="btn sm">Save language</button></section>')
 print('done',len(used))
 bad=orrery_check(); assert not bad, bad; print('orrery ok')

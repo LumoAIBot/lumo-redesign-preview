@@ -273,3 +273,11 @@ h1{line-height:1.08!important}.hero h1{padding-top:4px}
 .ph h1{margin-bottom:6px}.ph .help{margin-top:4px}
 .legal-head h1+p,.legal-head p{margin-top:14px}
 .side .off{display:block;padding:6px 0;color:var(--mute);opacity:.55;font-size:15px;cursor:default}@media(max-width:760px){.side .off{display:none}}
+/* polish: measure + button consistency */
+.btn{white-space:nowrap;justify-content:center}
+main li,main dd,main td,main details>div,main details>p{max-width:62ch}
+main p{max-width:62ch}
+main .btn.sm{margin-top:4px}
+button.btn.sm,.btn.sm{font-size:13px;padding:8px 12px}
+@media (max-width:800px){aside.side{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);padding-right:40px}}
+h1,h2,h3{text-wrap:balance;hyphens:manual}
