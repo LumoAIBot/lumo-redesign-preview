@@ -258,3 +258,4 @@ details.menu{border:0;padding:0}
 .orrery .plabel{font:500 5.2px 'IBM Plex Mono',monospace;letter-spacing:.06em;fill:var(--ink-o);opacity:.8;text-transform:uppercase}
 @media(max-width:760px){.orrery .plabel{display:none}}
 @media(max-width:760px){.plate{width:80vw!important}}
+.hero{overflow-x:clip}@media(max-width:760px){.plate{width:76vw!important}}
