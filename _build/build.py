@@ -219,7 +219,7 @@ HERE=os.path.dirname(os.path.abspath(__file__))
 for x in ['base.css','theme.js','sky.js']:
     if os.path.exists(os.path.join(HERE,x)): shutil.copy(os.path.join(HERE,x),OUT)
 shutil.copytree(os.path.join(HERE,'assets'),OUT+'/assets',dirs_exist_ok=True)
-for h in ['halloween','thanksgiving','christmas']: shutil.copytree('/workspace/site-repo/assets/robot/'+h,OUT+'/assets/robot/'+h,dirs_exist_ok=True)
+pass  # holiday outfits: our own art in assets/robot/<holiday>/ (made by _build/hats)
 CAPFIX=[("A hunt, playing out. Animated by Lumo in Discord.","A hunt playing out in Discord")]
 for f in _g.glob(OUT+'/*.html'):
     t=open(f).read()
