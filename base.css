@@ -236,3 +236,18 @@ section.cta{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 7%
 @media (prefers-reduced-motion:reduce){.mq{animation:none;flex-wrap:wrap;width:auto;padding:0 5vw}}
 details.menu{border:0;padding:0}
 .marquee+.ed::before{display:none}
+/* ===== detailed orrery ===== */
+:root{--ink-o:#2a3550;--ring:#8a6214}[data-theme=dark]{--ink-o:#b9b0ff;--ring:#e8cf8a}
+.plate{border:0!important}.plate::before,.plate .orb,.plate .planet,.plate>.tw,.plate>.px{display:none!important}
+.orrery{position:absolute;inset:-6%;width:112%;height:112%;overflow:visible}
+.orrery .spin{transform-box:view-box;transform-origin:200px 200px;animation:spin 200s linear infinite}
+.orrery .spin.rev{animation-direction:reverse}.orrery .s-moon{animation-duration:14s!important}
+.orrery .twk{animation:tw 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.orrery .rings{animation:spin 600s linear infinite;transform-box:view-box;transform-origin:200px 200px}
+.plate .glow{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,#4fe3e0 22%,transparent),transparent);pointer-events:none}
+[data-theme=light] .plate .glow{background:radial-gradient(closest-side,rgba(240,195,90,.22),transparent)}
+[data-theme=light] .orrery circle[fill="#05060f"]{opacity:.32}
+[data-theme=light] .orrery .atmo{opacity:.15}
+.plate img.bot{z-index:1}
+@media (prefers-reduced-motion:reduce){.orrery .spin,.orrery .twk,.orrery .rings{animation:none}}
+@media(max-width:760px){.orrery .deg{display:none}}
