@@ -1,0 +1,203 @@
+<!doctype html><html lang=en data-theme=dark><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Commands · Lumo (preview)</title><link rel=icon href=star.png><link rel=stylesheet href=base.css><script>try{var t=localStorage.getItem('lumo-prev-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script></head><body class="L-ledger"><header class=top><a class=brand href=index.html><img class=px src=star.png width=20 alt="">Lumo</a><nav class=main-nav><a href="getting-started.html">Get started</a><a href="features.html"><img class="px bob" src=star.png width=13 alt="">Features</a><a href="starkeepers.html">How to play</a><a href="commands.html" aria-current=page>Commands</a><a href="premium.html">Premium</a><a href="faq.html">FAQ</a><a href="dashboard-info.html"><img class="px bob" src=moon-full.png width=13 alt="">Dashboard</a></nav><div class=hr><a class="btn sm" href="https://discord.com/oauth2/authorize?client_id=1545140271073722378&permissions=309576723664&scope=bot+applications.commands" rel=noopener>Add to Discord</a><button class="hbtn tt" type=button aria-label="Switch light or dark">☾</button><details class=menu><summary class=hbtn aria-label=Menu>Menu</summary><div class=menu-p><a href="getting-started.html">Get started</a><a href="features.html">Features</a><a href="starkeepers.html">How to play</a><a href="commands.html">Commands</a><a href="premium.html">Premium</a><a href="faq.html">FAQ</a><a href="dashboard-info.html">Dashboard</a><a href="https://discord.com/oauth2/authorize?client_id=1545140271073722378&permissions=309576723664&scope=bot+applications.commands" rel=noopener>Add to Discord</a></div></details></div></header><main><section class="hero page-hero"><div><p class=mono>Commands</p><h1>Every command</h1><div class=lede><p class="lead">Search or filter below. Click a command to copy it. <span class="badge b-premium">Premium</span> means the server needs Premium.</p></div><div class=btns></div></div><figure class="plate "><img class="px s1" src=star.png alt=""><img class="px m1" src=moon-full.png alt=""><img class="px s2" src=star.png alt=""><img class=bot src="assets/robot/working-320.webp" alt=""><figcaption class=mono>Plate V. Lumo at the console</figcaption></figure></section><div class=cmd-find><label class=mono for=q>Find a command</label><input id=q type=search placeholder="Try sky, play, or top" autocomplete=off></div><section class=ed id="commands"><div class=body>
+
+<p class="cmd-note h-mini"><img alt="" class="mini-bot" height="40" src="assets/robot/gaming-96.webp" width="40"/><span>20 slash commands. <code class="arg">arg?</code> means optional.</span></p>
+<p class="cmd-note h-mini"><img alt="" class="mini-bot" height="40" src="assets/robot/idea-96.webp" width="40"/><span><strong>Reaction roles and Customize</strong> are not slash commands any more: manage them in the <a href="dashboard-servers.html" rel="noopener" target="_blank">web dashboard (beta)</a>, together with giveaways and polls.</span></p>
+<div id="cmd-list">
+<section class="cmd-group"><h2> Chat &amp; voice <small>3</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/help</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>How Lumo works, and every command.</p><ul class="args"><li><code class="arg">topic?</code><span>Jump straight to a help page</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/voice</button><span class="badges"><span class="badge b-premium">Premium</span><span class="badge b-any">Anyone</span></span></header>
+<p>Join or leave your voice channel for live voice with Lumo. Pick join or leave. Talking with Lumo in voice needs Premium. Music works on any server.</p><ul class="args"><li><code class="arg req">action</code><span>Join your voice channel and listen, or leave it</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/ping</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Lumo latency and connection status.</p>
+</article></div></section>
+<section class="cmd-group"><h2> Music <small>4</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/play</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Play a song, or add it to the queue if something is playing. One song per command. Up to 25 songs can wait per server, and you get Added to queue with its position. The next song starts by itself when one ends. The now-playing message shows what is up next and has Pause/Resume, Skip, Stop (clears the queue) and Queue buttons for anyone in the voice channel, and for admins.</p><ul class="args"><li><code class="arg req">query</code><span>Song name or a SoundCloud link</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/queue view</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Show what is playing and the next songs in the queue. Only you see it. Anyone in the server can look.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/queue remove</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Remove one song from the queue by its position. Position 1 is the song that plays next. You need to be in the voice channel, or be an admin.</p><ul class="args"><li><code class="arg req">position</code><span>Position in the queue (1 = next up)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/queue clear</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Empty the queue. The current song keeps playing. You need to be in the voice channel, or be an admin.</p>
+</article></div></section>
+<section class="cmd-group"><h2> Games <small>14</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/game</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Lumo Coin games: open the game hub, or jump straight into a game. Run it on its own to open the game hub: your balance, a line about each game and a button per game. Press one, type your bet, and play. Games: Blackjack, Slots, Poker, Higher or Lower, Coin Toss, Trivia and Connect Four. Every result shows your new balance, with Same bet, Double and Quit buttons for a minute. Only you can press your buttons. Play money only.</p><ul class="args"><li><code class="arg">game?</code><span>Skip the hub and start this game</span></li><li><code class="arg">bet?</code><span>Bet in Lumo Coins (asked for if you pick a game without one)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/slots</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Spin the Lumo Coin slots. Pick a machine, or use your last one. Pick Cosmos Wheel, Nebula or Event Horizon, or leave machine empty to use your last one. The result card shows the reel grid, multiplier, payout and your balance, with Same bet, Double, Paytable and Quit buttons. Bets 100 to 10,000. Play money only.</p><ul class="args"><li><code class="arg">bet?</code><span>Bet in Lumo Coins (asked for if you leave it out)</span></li><li><code class="arg">machine?</code><span>Which cabinet to sit at</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/connect4</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Connect Four for Lumo Coins: play Lumo, or challenge a member. Leave opponent empty to play Lumo, or challenge a member: you each put in the same bet and the winner takes the pot. Bets 10 to 1,000. Play money only.</p><ul class="args"><li><code class="arg">opponent?</code><span>Challenge a member (leave empty to play Lumo)</span></li><li><code class="arg">bet?</code><span>Bet in Lumo Coins (asked for if you leave it out)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky watch</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: tonight's stars. Catch one free each night, more with stardust. Shows 3 stars each night, or 5 on a full moon. The real moon phase decides which stars can appear. Your first catch is free; extra catches cost stardust, earned by chatting, voice and Lumo games (never with coins). New stars at midnight ET. An admin turns Starkeepers on in the dashboard.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky view</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: your night sky as a picture. Draws every star you caught, glowing in its color, with tonight's moon. Pick a member to see their sky.</p><ul class="args"><li><code class="arg">member?</code><span>Whose sky to see (leave empty for yours)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky collection</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: your stars by family, brightening and sky styles. Progress for all 8 families and the rarer tiers you unlock by leveling up. Pick a star to brighten it with stardust, or open Style for sky backgrounds (Lumo Coins, looks only).</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky server</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: the shared server sky. Place your stars into constellations and light them together. Shows the server sky picture with all 16 constellations (14 across six regions, plus 2 during the Eclipse Ring event). A constellation lights for good when every slot is filled and it has enough light; brighter, rarer stars count more. Everyone who helped gets its badge and the server gets a small perk (never bought).</p><p>Also works as <code>/sky constellations</code>.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky trip</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: send one of your stars on a 2-hour trip. Collect it for fragments of its family; 10 fragments of one family make one of its stars brighter.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky wish</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: wish for a star you don’t have yet. It gets a small extra chance to show up each night, growing until it does.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky story</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: read the story chapters you’ve unlocked. Chapters open as you and your server play.</p>
+</article><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky observatory</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: your observatory. Upgrade trips, task rerolls and a telescope with fragments and stardust. On unless an admin turns it off.</p>
+</article><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky star</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: any star’s profile, with its lore, battle stats, moves, passive and your own record. Stars you haven’t rekindled show a hint and a Set wish button.</p>
+</article><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky team</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: pick up to 3 of your stars to hunt with. Brighter stars are a little stronger. On unless an admin turns hunts off.</p>
+</article><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky hunt</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: battle a star dulled by the Dimming with your team. Win to rekindle it for stardust and a chance it joins your sky. On unless an admin turns hunts off.</p>
+</article><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/sky boss</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Starkeepers: face your story chapter’s boss with your team. Win to rekindle it and open the next chapter. On unless an admin turns story boss fights off.</p>
+</article></div></section>
+<section class="cmd-group"><h2> Lumo Coins <small>2</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/coins wallet</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Your Lumo Coin wallet and the top 10 on this server. Your Lumo Coin wallet is shared across servers. Each server has its own Lumo house wallet (100,000,000 to start), and the leaderboard shows this server’s house.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/coins daily</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Claim today's Lumo Coins (once per Eastern day; consecutive days build a streak bonus). Takes no options: just run it. Claim on consecutive days (Eastern time) to build a Day N streak: from day 2 you get +100 more per day, up to +500, and a missed day starts it over.</p>
+</article></div></section>
+<section class="cmd-group"><h2> Profiles &amp; stats <small>4</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/profile</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Show a member's Discord facts, Lumo Coin wallet and badges.</p><ul class="args"><li><code class="arg">member?</code><span>Who to look up. Leave empty for yourself.</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/rank</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Your level card on this server, or another member's. Shows the level, server rank, XP to the next level and the next level role as a picture. Works in every server, and it is the same level as on /profile.</p><ul class="args"><li><code class="arg">member?</code><span>Who to look up. Leave empty for yourself.</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/server</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Show this server's stats and Lumo setup.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/top</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Ranks on this server: messages, voice time, levels or stargazers. Pick Messages, Voice time, Levels or Stargazers. Levels shows the top 5 as a picture. Stargazers ranks Starkeepers players by sky light.</p><ul class="args"><li><code class="arg">sort?</code><span>How to rank people</span></li></ul>
+</article></div></section>
+<section class="cmd-group"><h2> Giveaways &amp; polls <small>9</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/giveaway start</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Start a giveaway in this channel (or another one). Administrators only. Posts a giveaway with Enter and Leave buttons. Duration looks like 30m, 2h, 1d or 1d12h (1 minute to 30 days). Winners are drawn fairly at random from people still in the server. Up to 10 running at once. Free, no AI.</p><ul class="args"><li><code class="arg req">prize</code><span>What people can win</span></li><li><code class="arg req">duration</code><span>How long it runs, like 30m, 2h, 1d or 1d12h (1 minute to 30 days)</span></li><li><code class="arg">winners?</code><span>How many winners (1-20, default 1)</span></li><li><code class="arg">role?</code><span>Only people with this role can enter (optional)</span></li><li><code class="arg">channel?</code><span>Where to post it (default: this channel)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/giveaway end</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>End a giveaway now and pick the winners. Administrators only. Ends it now and picks the winners. Safe to press twice: winners are only picked once.</p><ul class="args"><li><code class="arg req">giveaway</code><span>Which giveaway</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/giveaway reroll</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Pick a new winner for a giveaway that has ended. Administrators only. Picks a new winner after a giveaway ended. Someone who already won is never picked again.</p><ul class="args"><li><code class="arg req">giveaway</code><span>Which giveaway</span></li><li><code class="arg">count?</code><span>How many new winners (default 1)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/giveaway cancel</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Cancel a running giveaway without picking anyone. Administrators only. Stops a running giveaway without picking anyone.</p><ul class="args"><li><code class="arg req">giveaway</code><span>Which giveaway</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/giveaway list</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Show this server's active giveaways and the latest finished ones. Shows what is running and the latest finished giveaways, only to you.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/poll create</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Post a poll in this channel (or another one). Administrators only. Posts a poll with 2 to 10 option buttons. One vote per person that they can change, or several with multiple. Counts update live and nobody sees who voted for what. Add a duration to close it automatically. Up to 10 open at once. Free, no AI.</p><ul class="args"><li><code class="arg req">question</code><span>What you want to ask</span></li><li><code class="arg req">option1</code><span>First option</span></li><li><code class="arg req">option2</code><span>Second option</span></li><li><code class="arg">option3?</code><span>Third option (optional)</span></li><li><code class="arg">option4?</code><span>Fourth option (optional)</span></li><li><code class="arg">option5?</code><span>Fifth option (optional)</span></li><li><code class="arg">option6?</code><span>Sixth option (optional)</span></li><li><code class="arg">option7?</code><span>Seventh option (optional)</span></li><li><code class="arg">option8?</code><span>Eighth option (optional)</span></li><li><code class="arg">option9?</code><span>Ninth option (optional)</span></li><li><code class="arg">option10?</code><span>Tenth option (optional)</span></li><li><code class="arg">duration?</code><span>Close it automatically after this long, like 30m, 2h or 1d (optional)</span></li><li><code class="arg">multiple?</code><span>Let people pick several options (default: one)</span></li><li><code class="arg">channel?</code><span>Where to post it (default: this channel)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/poll close</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Close a poll now and post the final results. Administrators only. Closes a poll now and posts the final results.</p><ul class="args"><li><code class="arg req">poll</code><span>Which poll</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/poll results</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Show the current (or final) results of a poll, just to you. Shows the current (or final) counts and percentages, only to you.</p><ul class="args"><li><code class="arg req">poll</code><span>Which poll</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/poll list</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Show this server's open polls and the latest closed ones. Shows the open polls and the latest closed ones, only to you.</p>
+</article></div></section>
+<section class="cmd-group"><h2> Server setup <small>9</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/setup status</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>See what's set up in this server and what needs fixing. Administrators only. A private checklist of what is set up in your server (welcome, logs, auto-role, reaction and color roles, date channel, Void, AutoMod, Premium, customization) with the command to fix each gap. It warns about deleted channels or roles, missing permissions and role order, and changes nothing.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/setup language</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Pick the language Lumo uses in this server. Administrators only. Pick English, Español, Português (Brasil) or 日本語 for Lumo's replies, buttons, cards and logs in this server. English is the default. Slash command names and descriptions follow each person's own Discord language.</p><ul class="args"><li><code class="arg req">language</code><span>The language for Lumo's messages, /help and games here</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/setup welcome</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Set the channel for welcome messages. Administrators only.</p><ul class="args"><li><code class="arg req">channel</code><span>Channel where new-member welcomes should post</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/setup autorole</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Give a role to people as soon as they join. Administrators only.</p><ul class="args"><li><code class="arg">role?</code><span>Role new members receive on join</span></li><li><code class="arg">off?</code><span>Turn auto-role off for this server</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/setup datechannel</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Set the voice channel that shows today's date. Administrators only.</p><ul class="args"><li><code class="arg req">channel</code><span>Voice channel to rename each night at midnight (Eastern unless you change it on the dashboard)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/setup logs</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Set the server log channel and pick which events Lumo posts.</p><ul class="args"><li><code class="arg">channel?</code><span>Channel that receives log embeds</span></li><li><code class="arg">event?</code><span>One event to turn on or off</span></li><li><code class="arg">enabled?</code><span>On or off for that event</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/purge</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Delete up to 100 recent messages in this channel. Administrators only.</p><ul class="args"><li><code class="arg">amount?</code><span>How many messages to delete (1-100)</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/forgetme</button><span class="badges"><span class="badge b-admin">Server owner</span></span></header>
+<p>Erase the messages, memory and activity stats Lumo stores for this server. Owner only. Only the server owner can use it, and it asks for confirmation first. It also erases everyone's XP and levels in the server. Premium, settings, usage counters and Lumo Coin wallets are kept.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/setup void</button><span class="badges"><span class="badge b-admin">Admin</span><span class="badge b-any">Free</span></span></header>
+<p>Make a bait channel. A post there is deleted and logged. Administrators only. Starts as log only. Admins and Manage Server are left alone, and so are other bots.</p><ul class="args"><li><code class="arg">action</code><span>What a post in the bait channel does: log only, timeout, kick, softban, or off</span></li><li><code class="arg">channel</code><span>Use this channel instead of making #void</span></li><li><code class="arg">timeout_minutes</code><span>Timeout length, 1 to 10080 minutes. Only used when action is timeout</span></li></ul>
+</article></div></section>
+<section class="cmd-group"><h2><span aria-hidden="true">✦</span> Premium <small>3</small></h2><div class="cmd-grid"><article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/premium status</button><span class="badges"><span class="badge b-any">Anyone</span></span></header>
+<p>Show this server's Premium status and how to upgrade. Shows this server’s plan and when it ends. On a Premium server it also shows AI replies used today and images and videos used this month, with when each resets.</p>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/premium claim</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Activate your Ko-fi Lumo Premium payment for this server. Administrators only. Use the email you paid with, or the transaction ID from your Ko-fi receipt. Later renewals extend the same server by themselves.</p><ul class="args"><li><code class="arg req">paid_with</code><span>The email you paid with on Ko-fi, or the transaction ID from your receipt</span></li></ul>
+</article>
+<article class="cmd">
+<header><button class="cmd-name" title="Copy" type="button">/premium redeem</button><span class="badges"><span class="badge b-admin">Admin</span></span></header>
+<p>Redeem a Lumo Premium code for this server. Administrators only.</p><ul class="args"><li><code class="arg req">code</code><span>Your code, like LUMO-XXXX-XXXX (older AETH- codes work too)</span></li></ul>
+</article></div></section>
+</div>
+<p class="empty" hidden="" id="cmd-empty"><img alt="" class="mini-bot" height="64" src="assets/robot/surprised-96.webp" width="64"/><br/>No commands match that search.</p>
+
+</div></section></main><footer class=colophon><div class=c1><img src=wave-96.webp width=44 alt=""><div><b>Lumo</b><p>A Discord bot with a night sky in it. Made by Oriyi, one person, with help from the support server.</p><p class=mono>This preview is English only.</p></div></div>
+<div><p class=mono>Explore</p><a href=getting-started.html>Get started</a><a href=features.html>Features</a><a href=starkeepers.html>How to play</a><a href=commands.html>Commands</a><a href=premium.html>Premium</a><a href=changelog.html>Changelog</a></div>
+<div><p class=mono>Help</p><a href=faq.html>FAQ</a><a href=dashboard-info.html>About the dashboard</a><a href="https://discord.gg/KZjebts36C" rel=noopener>Support server</a><a href="https://discord.com/users/1022200760018161684" rel=noopener>Message Ori</a><a href=faq.html#claim>Claim Premium</a></div>
+<div><p class=mono>The fine print</p><a href=status.html>Status</a><a href=terms.html>Terms</a><a href=privacy.html>Privacy</a><a href="https://github.com/OniSyris" rel=noopener>@OniSyris</a></div></footer><script>var q=document.getElementById("q");q&&q.addEventListener("input",function(){var v=q.value.toLowerCase();document.querySelectorAll(".cmd").forEach(function(c){c.hidden=v&&c.textContent.toLowerCase().indexOf(v)<0})})</script><div class=pv-label>Preview, not live</div><script>document.querySelectorAll(".tt").forEach(function(b){b.onclick=function(){var d=document.documentElement,n=d.dataset.theme=="dark"?"light":"dark";d.dataset.theme=n;try{localStorage.setItem("lumo-prev-theme",n)}catch(e){}}})</script></body></html>
