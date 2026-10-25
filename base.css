@@ -208,7 +208,7 @@ h1 em,.hero h1 em{color:var(--gold)}
 @keyframes float{50%{transform:translateY(-12px) rotate(-1.5deg)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes tw{50%{opacity:.35;transform:scale(.8)}}
 @keyframes orbit{to{transform:rotate(360deg)}}
 /* richer figs */
-.fig,.body .stage,.body figure{position:relative;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));background:var(--panel) linear-gradient(color-mix(in srgb,var(--vio2) 10%,transparent) 1px,transparent 1px) 0 0/20px 20px,linear-gradient(90deg,color-mix(in srgb,var(--vio2) 10%,transparent) 1px,transparent 1px) 0 0/20px 20px;padding:14px;box-shadow:6px 6px 0 color-mix(in srgb,var(--vio2) 22%,transparent)}
+.fig,.body .stage,.body figure{position:relative;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));background:linear-gradient(color-mix(in srgb,var(--vio2) 10%,transparent) 1px,transparent 1px) 0 0/20px 20px,linear-gradient(90deg,color-mix(in srgb,var(--vio2) 10%,transparent) 1px,transparent 1px) 0 0/20px 20px,var(--panel);padding:14px;box-shadow:6px 6px 0 color-mix(in srgb,var(--vio2) 22%,transparent)}
 .fig::before,.body .stage::before{content:'';position:absolute;inset:-6px;border:1px dashed color-mix(in srgb,var(--gold) 35%,transparent);pointer-events:none}
 .fig img,.stage img{transition:transform .4s}.fig:hover img{transform:scale(1.015)}
 .body .stage figure{box-shadow:none;border:0;padding:0;background:none}.body .stage figure::before{display:none}
@@ -331,3 +331,7 @@ svg.moon .m-dark{fill:#1b1d2b}svg.moon .m-rim{stroke:#f1e2b4;stroke-opacity:.35;
 .live-stats[hidden]{display:none}
 .live-stats b{font:500 26px/1 'Fraunces',Georgia,serif;letter-spacing:0;text-transform:none;color:var(--gold);margin-right:6px}
 .live-stats .dot{width:7px;height:7px;border-radius:50%;background:#4fd18b;box-shadow:0 0 8px #4fd18b;align-self:center}
+
+/* Desktop-site mode on phones: stop Chrome font boosting from widening text past its box; flex children may shrink */
+html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}
+section.cta>*{min-width:0}section.cta>img{flex:none}section.cta p,.body p,.body li{overflow-wrap:anywhere}

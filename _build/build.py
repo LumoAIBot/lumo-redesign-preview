@@ -135,7 +135,7 @@ print(len(used),'assets')
 
 # ---------- home ----------
 HOME=f'''<section class="hero home"><div><p class=mono>A Discord bot · Starkeepers in beta</p><h1>A night sky that lives in your <em>Discord server.</em></h1>
-<div class=lede><p>Every night a new batch of stars turns up. Catch one, keep your watch streak going, and fill in constellations with the rest of your server. Every so often a wild star shows up, and you hunt it down as a team.</p></div>
+<div class=lede><p>Every night a new batch of stars turns up. Catch one, keep your watch streak going, and fill in constellations with the rest of your server. When you want a fight, take a team of up to three of your stars on a hunt.</p></div>
 <div class=btns><a class=btn href="{INVITE}" rel=noopener>Add Lumo to Discord</a><a class="btn ghost" href=starkeepers.html>How to play</a></div>
 <p class=mono style="margin-top:16px">Free to add · Nothing to install</p><p class=live-stats data-live-stats hidden aria-label="Lumo right now"><span class=dot></span><span><b data-stat=servers></b><span data-unit=servers>servers</span></span><span><b data-stat=members></b>members</span></p></div>
 {plate('wave-512.webp','Lumo, keeper of the night',0)}</section>
@@ -202,8 +202,8 @@ dash('dashboard.html','Overview','How your server is doing and what to do next.'
  '<li class=done><b>Welcome channel</b><span>Set</span></li><li class=done><b>Join role</b><span>Set</span></li><li><b>Server logs</b><span>Not set up · <code>/setup logs</code></span></li><li><b>Void bait channel</b><span>Not set up · <code>/setup void</code></span></li></ol>'
  '<h2 class=sec>Usage and plan</h2><dl class="ledger usage"><dt>AI replies today</dt><dd>0 of 100</dd><dt>Images and videos this month</dt><dd>0 of 15</dd><dt>Premium</dt><dd>Not active</dd><dt>House wallet</dt><dd>Placeholder</dd></dl>')
 dash('dashboard-features.html','Features','Turn things on or off for this server. Starkeepers, hunts, the observatory and bosses are on by default.','assets/robot/idea-96.webp',
- '<h2 class=sec>Starkeepers <span class=badge>Beta</span></h2><div class=rows>'+row('sparkle.png','Nightly catches','Members catch one star a night with /sky watch.',1)+row('moon-eclipse.png','Hunts','Wild stars appear and the server fights them together.',1,'',.6)+row('moon-full.png','Observatory &amp; bosses','Shared server sky and boss stars.',1,'',1.2)+'</div>'
- '<h2 class=sec>Server</h2><div class=rows>'+row('sparkle.png','Level-up messages &amp; roles','Chat XP and level-up cards. Off until you turn it on.',0,'',.3)+row('sparkle.png','Welcome card','Greet new members with a card and your own words.',1,'',.9)+row('sparkle.png','AutoMod','Light filtering for invite links, scam links and mass mentions.',0,'',1.5)+row('moon-full.png','AI chat','AI-powered chat in the channels you pick.',0,'Premium',2)+'</div>')
+ '<h2 class=sec>Starkeepers <span class=badge>Beta</span></h2><div class=rows>'+row('sparkle.png','Nightly catches','Members catch one free star a night with /sky watch.',1)+row('moon-eclipse.png','Hunts','Battle stars dulled by the Dimming with a team of up to three.',1,'',.6)+row('moon-full.png','Observatory &amp; bosses','Observatory upgrades and story boss fights.',1,'',1.2)+'</div>'
+ '<h2 class=sec>Server</h2><div class=rows>'+row('sparkle.png','Level-up messages &amp; roles','Chat XP and level-up cards. Off until you turn it on.',0,'',.3)+row('sparkle.png','Welcome card','Greet new members with a card and your own words.',1,'',.9)+row('sparkle.png','AutoMod','Light filtering for invite links, scam links, mass mentions and spam bursts.',0,'',1.5)+row('moon-full.png','AI chat','AI-powered chat in the channels you pick.',0,'Premium',2)+'</div>')
 dash('dashboard-starkeepers.html','Starkeepers','The shared night sky your members build together. It updates by itself while this page is open.','assets/robot/happy-96.webp',
  '<figure class=fig><img src=assets/starkeepers-sky-1200.webp alt="The server sky with constellations"><figcaption class=mono>Fig. 1. The Night Owls\' sky (sample render)</figcaption></figure><dl class="ledger usage" style="margin-top:28px"><dt>Moon tonight</dt><dd>Placeholder</dd><dt>Tonight\'s server goal</dt><dd>Placeholder</dd><dt>Hunts</dt><dd>On</dd></dl>')
 asset('assets/starkeepers-sky-1200.webp')
@@ -215,6 +215,7 @@ dash('dashboard-settings.html','Settings','Pick a channel or role from the lists
  '<section class=set id=language><h2>Language</h2><label>Lumo\'s language in this server<select><option>English</option></select></label><button class="btn sm">Save language</button></section>')
 
 import shutil,glob as _g
+import ctafix
 HERE=os.path.dirname(os.path.abspath(__file__))
 for x in ['base.css','theme.js','sky.js']:
     if os.path.exists(os.path.join(HERE,x)): shutil.copy(os.path.join(HERE,x),OUT)
@@ -224,6 +225,7 @@ CAPFIX=[("A hunt, playing out. Animated by Lumo in Discord.","A hunt playing out
 for f in _g.glob(OUT+'/*.html'):
     t=open(f).read()
     for a,b in CAPFIX: t=t.replace(a,b)
+    t=ctafix.fix(t)
     t=re.sub(r'(?:Fig\.\s*\d+|Plate\s+[IVXL]+)\.\s*([\w/])',lambda m:m.group(1).upper(),t)
     t=re.sub(r'src=(["\']?)((?:wave|happy|salute|thinking|idea)-\d+\.webp)',r'src=\1assets/robot/\2',t)
     open(f,'w').write(t)
