@@ -1,0 +1,402 @@
+{
+"en": {
+"watch": {
+"title": "✦ Mira · Tonight 🌔 Waxing gibbous",
+"desc": "🌔 The moon calls **🌌 Aurora** closer tonight: they're 50% more likely to appear. *The light is filling up and won't sit still.*\n🔥 **4-night streak** · +20 stardust\n\n❄️ **Snowmote** · ✦ Common · ❄️ Frost\n🌌 **Ribbonlight** · ✦ Common · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Common · 🌊 Tide\n\n**Next catch:** free · You have **340** stardust.",
+"foot": "✦ Lumo · New stars at midnight ET",
+"color": "#bfe6ff"
+},
+"watch_btns": [
+"Catch Snowmote",
+"Catch Ribbonlight",
+"Catch Tidepearl"
+],
+"details": "Tasks & goal",
+"catch": {
+"frost_flake": {
+"title": "✨ Mira caught a star",
+"desc": "❄️ **Snowmote** joins your sky!\n\n✦ Common · ❄️ Frost\n*A speck of frost that drifts like a falling snowflake.*\n\n**Brightness** · ★☆☆☆☆",
+"foot": "✦ Lumo · See it in your sky with /sky view",
+"color": "#bfe6ff"
+},
+"aurora_ribbon": {
+"title": "✨ Mira caught a star",
+"desc": "🌌 **Ribbonlight** joins your sky!\n\n✦ Common · 🌌 Aurora\n*A green ribbon that ripples when no one is looking.*\n\n**Brightness** · ★☆☆☆☆",
+"foot": "✦ Lumo · See it in your sky with /sky view",
+"color": "#6ef0b4"
+},
+"tide_pearl": {
+"title": "✨ Mira caught a star",
+"desc": "🌊 **Tidepearl** joins your sky!\n\n✦ Common · 🌊 Tide\n*A small round light the sea rolls up onto the shore.*\n\n**Brightness** · ★☆☆☆☆",
+"foot": "✦ Lumo · See it in your sky with /sky view",
+"color": "#6fa8ff"
+}
+},
+"after": {
+"frost_flake": {
+"embed": {
+"title": "✦ Mira · Tonight 🌔 Waxing gibbous",
+"desc": "🌔 The moon calls **🌌 Aurora** closer tonight: they're 50% more likely to appear. *The light is filling up and won't sit still.*\n🔥 **4-night streak** · +20 stardust\n\n✅ ❄️ **Snowmote** · ✦ Common · ❄️ Frost\n🌌 **Ribbonlight** · ✦ Common · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Common · 🌊 Tide\n\n**Next catch:** 25 stardust · You have **340** stardust.",
+"foot": "✦ Lumo · New stars at midnight ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Snowmote",
+"Catch Ribbonlight",
+"Catch Tidepearl"
+]
+},
+"aurora_ribbon": {
+"embed": {
+"title": "✦ Mira · Tonight 🌔 Waxing gibbous",
+"desc": "🌔 The moon calls **🌌 Aurora** closer tonight: they're 50% more likely to appear. *The light is filling up and won't sit still.*\n🔥 **4-night streak** · +20 stardust\n\n❄️ **Snowmote** · ✦ Common · ❄️ Frost\n✅ 🌌 **Ribbonlight** · ✦ Common · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Common · 🌊 Tide\n\n**Next catch:** 25 stardust · You have **340** stardust.",
+"foot": "✦ Lumo · New stars at midnight ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Catch Snowmote",
+"Ribbonlight",
+"Catch Tidepearl"
+]
+},
+"tide_pearl": {
+"embed": {
+"title": "✦ Mira · Tonight 🌔 Waxing gibbous",
+"desc": "🌔 The moon calls **🌌 Aurora** closer tonight: they're 50% more likely to appear. *The light is filling up and won't sit still.*\n🔥 **4-night streak** · +20 stardust\n\n❄️ **Snowmote** · ✦ Common · ❄️ Frost\n🌌 **Ribbonlight** · ✦ Common · 🌌 Aurora\n✅ 🌊 **Tidepearl** · ✦ Common · 🌊 Tide\n\n**Next catch:** 25 stardust · You have **340** stardust.",
+"foot": "✦ Lumo · New stars at midnight ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Catch Snowmote",
+"Catch Ribbonlight",
+"Tidepearl"
+]
+}
+},
+"stars": [
+"frost_flake",
+"aurora_ribbon",
+"tide_pearl"
+],
+"daily": {
+"title": "✦ Daily claimed",
+"desc": "Claimed ✦ **2,300** (includes a ✦ **300** streak bonus).\n**Day 4 streak.** Come back tomorrow to keep it going.\nWallet: ✦ **12,450**.",
+"foot": "✦ Lumo · One claim per day (ET)",
+"color": "#3d9b64"
+},
+"vote": {
+"title": "Vote for Lumo",
+"desc": "Like Lumo? Vote for it on Top.gg and get **1,000 Lumo Coins**. You can vote once every 12 hours, and the coins land in your wallet automatically.",
+"foot": "✦ Lumo · Thanks for the support!",
+"color": "#c9a227",
+"btn": "Vote on Top.gg"
+},
+"play": {
+"reply": "▶️ Playing **Outer Space Loop**.",
+"title": "✦ Now playing",
+"desc": "**Outer Space Loop** (1:35)\nUp next: nothing yet",
+"foot": "✦ Lumo · SoundCloud · buttons work for anyone in my voice channel",
+"color": "#c9a227"
+}
+},
+"es": {
+"watch": {
+"title": "✦ Mira · Esta noche 🌔 Gibosa creciente",
+"desc": "🌔 La luna acerca a **🌌 Aurora** esta noche: es un 50% más probable que aparezcan. *La luz se llena y no se queda quieta.*\n🔥 **Racha de 4 noches** · +20 de polvo estelar\n\n❄️ **Snowmote** · ✦ Común · ❄️ Escarcha\n🌌 **Ribbonlight** · ✦ Común · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Común · 🌊 Marea\n\n**Próxima captura:** gratis · Tienes **340** de polvo estelar.",
+"foot": "✦ Lumo · Nuevas estrellas a medianoche ET",
+"color": "#bfe6ff"
+},
+"watch_btns": [
+"Atrapar Snowmote",
+"Atrapar Ribbonlight",
+"Atrapar Tidepearl"
+],
+"details": "Tareas y meta",
+"catch": {
+"frost_flake": {
+"title": "✨ Mira atrapó una estrella",
+"desc": "❄️ ¡**Snowmote** se une a tu cielo!\n\n✦ Común · ❄️ Escarcha\n*Una mota de escarcha que flota como un copo de nieve.*\n\n**Brillo** · ★☆☆☆☆",
+"foot": "✦ Lumo · Mírala en tu cielo con /sky view",
+"color": "#bfe6ff"
+},
+"aurora_ribbon": {
+"title": "✨ Mira atrapó una estrella",
+"desc": "🌌 ¡**Ribbonlight** se une a tu cielo!\n\n✦ Común · 🌌 Aurora\n*Una cinta verde que ondea cuando nadie mira.*\n\n**Brillo** · ★☆☆☆☆",
+"foot": "✦ Lumo · Mírala en tu cielo con /sky view",
+"color": "#6ef0b4"
+},
+"tide_pearl": {
+"title": "✨ Mira atrapó una estrella",
+"desc": "🌊 ¡**Tidepearl** se une a tu cielo!\n\n✦ Común · 🌊 Marea\n*Una pequeña luz redonda que el mar deja en la orilla.*\n\n**Brillo** · ★☆☆☆☆",
+"foot": "✦ Lumo · Mírala en tu cielo con /sky view",
+"color": "#6fa8ff"
+}
+},
+"after": {
+"frost_flake": {
+"embed": {
+"title": "✦ Mira · Esta noche 🌔 Gibosa creciente",
+"desc": "🌔 La luna acerca a **🌌 Aurora** esta noche: es un 50% más probable que aparezcan. *La luz se llena y no se queda quieta.*\n🔥 **Racha de 4 noches** · +20 de polvo estelar\n\n✅ ❄️ **Snowmote** · ✦ Común · ❄️ Escarcha\n🌌 **Ribbonlight** · ✦ Común · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Común · 🌊 Marea\n\n**Próxima captura:** 25 de polvo estelar · Tienes **340** de polvo estelar.",
+"foot": "✦ Lumo · Nuevas estrellas a medianoche ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Snowmote",
+"Atrapar Ribbonlight",
+"Atrapar Tidepearl"
+]
+},
+"aurora_ribbon": {
+"embed": {
+"title": "✦ Mira · Esta noche 🌔 Gibosa creciente",
+"desc": "🌔 La luna acerca a **🌌 Aurora** esta noche: es un 50% más probable que aparezcan. *La luz se llena y no se queda quieta.*\n🔥 **Racha de 4 noches** · +20 de polvo estelar\n\n❄️ **Snowmote** · ✦ Común · ❄️ Escarcha\n✅ 🌌 **Ribbonlight** · ✦ Común · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Común · 🌊 Marea\n\n**Próxima captura:** 25 de polvo estelar · Tienes **340** de polvo estelar.",
+"foot": "✦ Lumo · Nuevas estrellas a medianoche ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Atrapar Snowmote",
+"Ribbonlight",
+"Atrapar Tidepearl"
+]
+},
+"tide_pearl": {
+"embed": {
+"title": "✦ Mira · Esta noche 🌔 Gibosa creciente",
+"desc": "🌔 La luna acerca a **🌌 Aurora** esta noche: es un 50% más probable que aparezcan. *La luz se llena y no se queda quieta.*\n🔥 **Racha de 4 noches** · +20 de polvo estelar\n\n❄️ **Snowmote** · ✦ Común · ❄️ Escarcha\n🌌 **Ribbonlight** · ✦ Común · 🌌 Aurora\n✅ 🌊 **Tidepearl** · ✦ Común · 🌊 Marea\n\n**Próxima captura:** 25 de polvo estelar · Tienes **340** de polvo estelar.",
+"foot": "✦ Lumo · Nuevas estrellas a medianoche ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Atrapar Snowmote",
+"Atrapar Ribbonlight",
+"Tidepearl"
+]
+}
+},
+"stars": [
+"frost_flake",
+"aurora_ribbon",
+"tide_pearl"
+],
+"daily": {
+"title": "✦ Diario reclamado",
+"desc": "Reclamaste ✦ **2,300** (incluye un bono de racha de ✦ **300**).\n**Racha de 4 días.** Vuelve mañana para mantenerla.\nBilletera: ✦ **12,450**.",
+"foot": "✦ Lumo · Un reclamo por día (ET)",
+"color": "#3d9b64"
+},
+"vote": {
+"title": "Vota por Lumo",
+"desc": "¿Te gusta Lumo? Vota por él en Top.gg y recibe **1,000 Lumo Coins**. Puedes votar una vez cada 12 horas y las monedas llegan solas a tu billetera.",
+"foot": "✦ Lumo · ¡Gracias por el apoyo!",
+"color": "#c9a227",
+"btn": "Votar en Top.gg"
+},
+"play": {
+"reply": "▶️ Sonando **Outer Space Loop**.",
+"title": "✦ Sonando ahora",
+"desc": "**Outer Space Loop** (1:35)\nA continuación: nada todavía",
+"foot": "✦ Lumo · SoundCloud · los botones funcionan para cualquiera en mi canal de voz",
+"color": "#c9a227"
+}
+},
+"pt-BR": {
+"watch": {
+"title": "✦ Mira · Hoje à noite 🌔 Gibosa crescente",
+"desc": "🌔 A lua chama **🌌 Aurora** para mais perto hoje: há 50% mais chance de aparecerem. *A luz está enchendo e não para quieta.*\n🔥 **Sequência de 4 noites** · +20 de poeira estelar\n\n❄️ **Snowmote** · ✦ Comum · ❄️ Geada\n🌌 **Ribbonlight** · ✦ Comum · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Comum · 🌊 Maré\n\n**Próxima captura:** grátis · Você tem **340** de poeira estelar.",
+"foot": "✦ Lumo · Novas estrelas à meia-noite ET",
+"color": "#bfe6ff"
+},
+"watch_btns": [
+"Pegar Snowmote",
+"Pegar Ribbonlight",
+"Pegar Tidepearl"
+],
+"details": "Tarefas e meta",
+"catch": {
+"frost_flake": {
+"title": "✨ Mira pegou uma estrela",
+"desc": "❄️ **Snowmote** entrou no seu céu!\n\n✦ Comum · ❄️ Geada\n*Um cisco de geada que flutua como um floco de neve.*\n\n**Brilho** · ★☆☆☆☆",
+"foot": "✦ Lumo · Veja no seu céu com /sky view",
+"color": "#bfe6ff"
+},
+"aurora_ribbon": {
+"title": "✨ Mira pegou uma estrela",
+"desc": "🌌 **Ribbonlight** entrou no seu céu!\n\n✦ Comum · 🌌 Aurora\n*Uma fita verde que ondula quando ninguém está olhando.*\n\n**Brilho** · ★☆☆☆☆",
+"foot": "✦ Lumo · Veja no seu céu com /sky view",
+"color": "#6ef0b4"
+},
+"tide_pearl": {
+"title": "✨ Mira pegou uma estrela",
+"desc": "🌊 **Tidepearl** entrou no seu céu!\n\n✦ Comum · 🌊 Maré\n*Uma pequena luz redonda que o mar deixa na praia.*\n\n**Brilho** · ★☆☆☆☆",
+"foot": "✦ Lumo · Veja no seu céu com /sky view",
+"color": "#6fa8ff"
+}
+},
+"after": {
+"frost_flake": {
+"embed": {
+"title": "✦ Mira · Hoje à noite 🌔 Gibosa crescente",
+"desc": "🌔 A lua chama **🌌 Aurora** para mais perto hoje: há 50% mais chance de aparecerem. *A luz está enchendo e não para quieta.*\n🔥 **Sequência de 4 noites** · +20 de poeira estelar\n\n✅ ❄️ **Snowmote** · ✦ Comum · ❄️ Geada\n🌌 **Ribbonlight** · ✦ Comum · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Comum · 🌊 Maré\n\n**Próxima captura:** 25 de poeira estelar · Você tem **340** de poeira estelar.",
+"foot": "✦ Lumo · Novas estrelas à meia-noite ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Snowmote",
+"Pegar Ribbonlight",
+"Pegar Tidepearl"
+]
+},
+"aurora_ribbon": {
+"embed": {
+"title": "✦ Mira · Hoje à noite 🌔 Gibosa crescente",
+"desc": "🌔 A lua chama **🌌 Aurora** para mais perto hoje: há 50% mais chance de aparecerem. *A luz está enchendo e não para quieta.*\n🔥 **Sequência de 4 noites** · +20 de poeira estelar\n\n❄️ **Snowmote** · ✦ Comum · ❄️ Geada\n✅ 🌌 **Ribbonlight** · ✦ Comum · 🌌 Aurora\n🌊 **Tidepearl** · ✦ Comum · 🌊 Maré\n\n**Próxima captura:** 25 de poeira estelar · Você tem **340** de poeira estelar.",
+"foot": "✦ Lumo · Novas estrelas à meia-noite ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Pegar Snowmote",
+"Ribbonlight",
+"Pegar Tidepearl"
+]
+},
+"tide_pearl": {
+"embed": {
+"title": "✦ Mira · Hoje à noite 🌔 Gibosa crescente",
+"desc": "🌔 A lua chama **🌌 Aurora** para mais perto hoje: há 50% mais chance de aparecerem. *A luz está enchendo e não para quieta.*\n🔥 **Sequência de 4 noites** · +20 de poeira estelar\n\n❄️ **Snowmote** · ✦ Comum · ❄️ Geada\n🌌 **Ribbonlight** · ✦ Comum · 🌌 Aurora\n✅ 🌊 **Tidepearl** · ✦ Comum · 🌊 Maré\n\n**Próxima captura:** 25 de poeira estelar · Você tem **340** de poeira estelar.",
+"foot": "✦ Lumo · Novas estrelas à meia-noite ET",
+"color": "#bfe6ff"
+},
+"btns": [
+"Pegar Snowmote",
+"Pegar Ribbonlight",
+"Tidepearl"
+]
+}
+},
+"stars": [
+"frost_flake",
+"aurora_ribbon",
+"tide_pearl"
+],
+"daily": {
+"title": "✦ Diário resgatado",
+"desc": "Você resgatou ✦ **2,300** (inclui um bônus de sequência de ✦ **300**).\n**Sequência de 4 dias.** Volte amanhã para continuar.\nCarteira: ✦ **12,450**.",
+"foot": "✦ Lumo · Um resgate por dia (ET)",
+"color": "#3d9b64"
+},
+"vote": {
+"title": "Vote no Lumo",
+"desc": "Curte o Lumo? Vote nele no Top.gg e ganhe **1,000 Lumo Coins**. Dá para votar uma vez a cada 12 horas, e as moedas caem na sua carteira automaticamente.",
+"foot": "✦ Lumo · Valeu pelo apoio!",
+"color": "#c9a227",
+"btn": "Votar no Top.gg"
+},
+"play": {
+"reply": "▶️ Tocando **Outer Space Loop**.",
+"title": "✦ Tocando agora",
+"desc": "**Outer Space Loop** (1:35)\nA seguir: nada ainda",
+"foot": "✦ Lumo · SoundCloud · os botões funcionam para qualquer pessoa no meu canal de voz",
+"color": "#c9a227"
+}
+},
+"ja": {
+"watch": {
+"title": "✦ Mira · 今夜 🌔 十三夜月",
+"desc": "🌔 今夜、月は **🌌 オーロラ** を呼び寄せます。現れやすさが50%アップ。 *光が満ちてきて、じっとしていられない。*\n🔥 **4夜連続** · 星くず +20\n\n❄️ **Snowmote** · ✦ コモン · ❄️ フロスト\n🌌 **Ribbonlight** · ✦ コモン · 🌌 オーロラ\n🌊 **Tidepearl** · ✦ コモン · 🌊 タイド\n\n**次のキャッチ：** 無料 · 星くず **340** 所持",
+"foot": "✦ Lumo · 新しい星は米国東部時間の深夜0時に",
+"color": "#bfe6ff"
+},
+"watch_btns": [
+"Snowmoteをつかまえる",
+"Ribbonlightをつかまえる",
+"Tidepearlをつかまえる"
+],
+"details": "タスクと目標",
+"catch": {
+"frost_flake": {
+"title": "✨ Miraが星をつかまえた",
+"desc": "❄️ **Snowmote** があなたの夜空に加わりました！\n\n✦ コモン · ❄️ フロスト\n*雪のひとひらのように漂う、小さな霜のかけら。*\n\n**明るさ** · ★☆☆☆☆",
+"foot": "✦ Lumo · /sky view で夜空を見よう",
+"color": "#bfe6ff"
+},
+"aurora_ribbon": {
+"title": "✨ Miraが星をつかまえた",
+"desc": "🌌 **Ribbonlight** があなたの夜空に加わりました！\n\n✦ コモン · 🌌 オーロラ\n*誰も見ていないときに揺れる、緑のリボン。*\n\n**明るさ** · ★☆☆☆☆",
+"foot": "✦ Lumo · /sky view で夜空を見よう",
+"color": "#6ef0b4"
+},
+"tide_pearl": {
+"title": "✨ Miraが星をつかまえた",
+"desc": "🌊 **Tidepearl** があなたの夜空に加わりました！\n\n✦ コモン · 🌊 タイド\n*海が浜辺へ転がしてくる、小さな丸い光。*\n\n**明るさ** · ★☆☆☆☆",
+"foot": "✦ Lumo · /sky view で夜空を見よう",
+"color": "#6fa8ff"
+}
+},
+"after": {
+"frost_flake": {
+"embed": {
+"title": "✦ Mira · 今夜 🌔 十三夜月",
+"desc": "🌔 今夜、月は **🌌 オーロラ** を呼び寄せます。現れやすさが50%アップ。 *光が満ちてきて、じっとしていられない。*\n🔥 **4夜連続** · 星くず +20\n\n✅ ❄️ **Snowmote** · ✦ コモン · ❄️ フロスト\n🌌 **Ribbonlight** · ✦ コモン · 🌌 オーロラ\n🌊 **Tidepearl** · ✦ コモン · 🌊 タイド\n\n**次のキャッチ：** 星くず 25 · 星くず **340** 所持",
+"foot": "✦ Lumo · 新しい星は米国東部時間の深夜0時に",
+"color": "#bfe6ff"
+},
+"btns": [
+"Snowmote",
+"Ribbonlightをつかまえる",
+"Tidepearlをつかまえる"
+]
+},
+"aurora_ribbon": {
+"embed": {
+"title": "✦ Mira · 今夜 🌔 十三夜月",
+"desc": "🌔 今夜、月は **🌌 オーロラ** を呼び寄せます。現れやすさが50%アップ。 *光が満ちてきて、じっとしていられない。*\n🔥 **4夜連続** · 星くず +20\n\n❄️ **Snowmote** · ✦ コモン · ❄️ フロスト\n✅ 🌌 **Ribbonlight** · ✦ コモン · 🌌 オーロラ\n🌊 **Tidepearl** · ✦ コモン · 🌊 タイド\n\n**次のキャッチ：** 星くず 25 · 星くず **340** 所持",
+"foot": "✦ Lumo · 新しい星は米国東部時間の深夜0時に",
+"color": "#bfe6ff"
+},
+"btns": [
+"Snowmoteをつかまえる",
+"Ribbonlight",
+"Tidepearlをつかまえる"
+]
+},
+"tide_pearl": {
+"embed": {
+"title": "✦ Mira · 今夜 🌔 十三夜月",
+"desc": "🌔 今夜、月は **🌌 オーロラ** を呼び寄せます。現れやすさが50%アップ。 *光が満ちてきて、じっとしていられない。*\n🔥 **4夜連続** · 星くず +20\n\n❄️ **Snowmote** · ✦ コモン · ❄️ フロスト\n🌌 **Ribbonlight** · ✦ コモン · 🌌 オーロラ\n✅ 🌊 **Tidepearl** · ✦ コモン · 🌊 タイド\n\n**次のキャッチ：** 星くず 25 · 星くず **340** 所持",
+"foot": "✦ Lumo · 新しい星は米国東部時間の深夜0時に",
+"color": "#bfe6ff"
+},
+"btns": [
+"Snowmoteをつかまえる",
+"Ribbonlightをつかまえる",
+"Tidepearl"
+]
+}
+},
+"stars": [
+"frost_flake",
+"aurora_ribbon",
+"tide_pearl"
+],
+"daily": {
+"title": "✦ デイリーを受け取りました",
+"desc": "✦ **2,300** を受け取りました（連続ボーナス ✦ **300** を含む）。\n**4日連続。** 明日も来て記録を伸ばしましょう。\nウォレット: ✦ **12,450**。",
+"foot": "✦ Lumo · 1日1回（ET）",
+"color": "#3d9b64"
+},
+"vote": {
+"title": "Lumoに投票",
+"desc": "Lumoを気に入ったら、Top.ggで投票して **1,000 Lumo Coins** をもらいましょう。投票は12時間ごとに1回できて、コインは自動でウォレットに入ります。",
+"foot": "✦ Lumo · 応援ありがとう！",
+"color": "#c9a227",
+"btn": "Top.ggで投票"
+},
+"play": {
+"reply": "▶️ **Outer Space Loop** を再生中。",
+"title": "✦ 再生中",
+"desc": "**Outer Space Loop** (1:35)\n次の曲：まだありません",
+"foot": "✦ Lumo · SoundCloud · ボタンは私のボイスチャンネルにいる誰でも使えます",
+"color": "#c9a227"
+}
+}
+}

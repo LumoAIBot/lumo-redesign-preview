@@ -10,7 +10,9 @@ used=set()
 def asset(src):
     src=src.split('?')[0].lstrip('/')
     if src.startswith('assets/') and os.path.exists(f'{SITE}/{src}'):
-        os.makedirs(os.path.dirname(f'{OUT}/{src}'),exist_ok=True); shutil.copy(f'{SITE}/{src}',f'{OUT}/{src}'); used.add(src)
+        os.makedirs(os.path.dirname(f'{OUT}/{src}'),exist_ok=True)
+        if not os.path.exists(f'{OUT}/{src}'): shutil.copy(f'{SITE}/{src}',f'{OUT}/{src}')
+        used.add(src)
     return src
 def link(h):
     if not h: return h
@@ -63,9 +65,9 @@ def head(title,cls=''):
 def site_header(active):
     nav=''.join(f'<a href="{h}"{" aria-current=page" if h==active else ""}>'+(f'<img class="px bob" src={i} width=13 alt="">' if i else '')+f'{l}</a>' for h,l,i in HEADNAV)
     return f'''<header class=top><a class=brand href=index.html><img class=logo-head src=assets/logo.webp width=30 height=30 alt="">Lumo</a><nav class=main-nav>{nav}</nav><div class=hr><a class="btn sm" href="{INVITE}" rel=noopener>Add to Discord</a>'''+THEMEPOP+f'''<details class=menu><summary class=hbtn aria-label=Menu>Menu</summary><div class=menu-p>{"".join(f'<a href="{h}">{l}</a>' for h,l,i in HEADNAV)}<a href="{INVITE}" rel=noopener>Add to Discord</a></div></details></div></header>'''
-FOOT=f'''<footer class=colophon><div class=c1><img src=wave-96.webp width=44 alt=""><div><b>Lumo</b><p>A Discord bot with a night sky in it. Made by Oriyi, one person, with help from the support server.</p><p class=mono>This preview is English only.</p></div></div>
+FOOT=f'''<footer class=colophon><div class=c1><img src=wave-96.webp width=44 alt=""><div><b>Lumo</b><p>A Discord bot with a night sky in it. Made by Oriyi, one person, with help from the support server.</p></div></div>
 <div><p class=mono>Explore</p><a href=getting-started.html>Get started</a><a href=features.html>Features</a><a href=starkeepers.html>How to play</a><a href=commands.html>Commands</a><a href=premium.html>Premium</a><a href=changelog.html>Changelog</a></div>
-<div><p class=mono>Help</p><a href=faq.html>FAQ</a><a href=dashboard-info.html>About the dashboard</a><a href="{SUPPORT}" rel=noopener>Support server</a><a href="{ORI}" rel=noopener>Message Ori</a><a href=faq.html#claim>Claim Premium</a></div>
+<div><p class=mono>Help</p><a href=faq.html>FAQ</a><a href=dashboard-info.html>About the dashboard</a><a href="{SUPPORT}" rel=noopener>Support server</a><a href="{ORI}" rel=noopener>Message Ori</a><a href=faq.html#claim>Claim Premium</a><a href="https://top.gg/bot/1545140271073722378/vote" rel=noopener>Vote on Top.gg</a></div>
 <div><p class=mono>The fine print</p><a href=status.html>Status</a><a href=terms.html>Terms</a><a href=privacy.html>Privacy</a><a href="https://github.com/OniSyris" rel=noopener>@OniSyris</a></div></footer>'''
 TAIL='<script src=sky.js></script><div class=pv-label>Preview, not live</div><script src=theme.js></script><script src=assets/lumo-holiday.js></script><script src=mascot.js></script><script src=assets/lumo-stats.js></script><script src=assets/lumo-music.js data-slot=".top .hr .theme-pop" data-src="assets/audio/outer-space-loop.mp3" data-volume="0.16" data-fade="2.5"></script></body></html>'
 from moons import moon_svg
@@ -124,7 +126,7 @@ def page(name,n):
     if name=='commands': html_+='<script>var q=document.getElementById("q");q&&q.addEventListener("input",function(){var v=q.value.toLowerCase();document.querySelectorAll(".cmd").forEach(function(c){c.hidden=v&&c.textContent.toLowerCase().indexOf(v)<0})})</script>'
     return html_+TAIL
 
-REWRITE=[(' colours',' colors'),('Everything Lumo can do','What Lumo does, roughly in order of how much fun it is'),('Small features, big difference','And a pile of smaller things'),('Music that just works','Music, from SoundCloud'),
+REWRITE=[('It also points you to the web dashboard (beta) for reaction roles, Customize, giveaways and polls.','It also points you to the web dashboard (beta) for reaction roles, Customize, giveaways and polls, and has the Top.gg vote link (the same one <code>/vote</code> posts).'),(' colours',' colors'),('Everything Lumo can do','What Lumo does, roughly in order of how much fun it is'),('Small features, big difference','And a pile of smaller things'),('Music that just works','Music, from SoundCloud'),
 ('Unlock the AI side of your server','Premium: the AI&#8209;powered part of Lumo'),('Questions, answered','Questions people actually asked'),('No surprises','Renewals, plainly'),('Three steps','How to get it')]
 for n,name in enumerate([p for p in PAGES if p!='status']):
     fn=RENAME.get(name+'.html',name+'.html'); h=page(name,(n%12)+1)
@@ -139,17 +141,25 @@ HOME=f'''<section class="hero home"><div><p class=mono>A Discord bot · Starkeep
 <div class=btns><a class=btn href="{INVITE}" rel=noopener>Add Lumo to Discord</a><a class="btn ghost" href=starkeepers.html>How to play</a></div>
 <p class=mono style="margin-top:16px">Free to add · Nothing to install</p><p class=live-stats data-live-stats hidden aria-label="Lumo right now"><span class=dot></span><span><b data-stat=servers></b><span data-unit=servers>servers</span></span><span><b data-stat=members></b>members</span></p></div>
 {plate('wave-512.webp','Lumo, keeper of the night',0)}</section>
-<div class=marquee aria-label="A few real Lumo commands"><div class=mq><code>/sky watch</code><img src=sparkle.png alt=""><code>/sky view</code><img src=sparkle.png alt=""><code>/sky hunt</code><img src=sparkle.png alt=""><code>/sky team</code><img src=sparkle.png alt=""><code>/sky boss</code><img src=sparkle.png alt=""><code>/play</code><img src=sparkle.png alt=""><code>/queue view</code><img src=sparkle.png alt=""><code>/game</code><img src=sparkle.png alt=""><code>/slots</code><img src=sparkle.png alt=""><code>/connect4</code><img src=sparkle.png alt=""><code>/rank</code><img src=sparkle.png alt=""><code>/top</code><img src=sparkle.png alt=""><code>/profile</code><img src=sparkle.png alt=""><code>/giveaway start</code><img src=sparkle.png alt=""><code>/poll create</code><img src=sparkle.png alt=""><code>/setup status</code><img src=sparkle.png alt=""><code>/help</code><img src=sparkle.png alt=""><code>/sky watch</code><img src=sparkle.png alt=""><code>/sky view</code><img src=sparkle.png alt=""><code>/sky hunt</code><img src=sparkle.png alt=""><code>/sky team</code><img src=sparkle.png alt=""><code>/sky boss</code><img src=sparkle.png alt=""><code>/play</code><img src=sparkle.png alt=""><code>/queue view</code><img src=sparkle.png alt=""><code>/game</code><img src=sparkle.png alt=""><code>/slots</code><img src=sparkle.png alt=""><code>/connect4</code><img src=sparkle.png alt=""><code>/rank</code><img src=sparkle.png alt=""><code>/top</code><img src=sparkle.png alt=""><code>/profile</code><img src=sparkle.png alt=""><code>/giveaway start</code><img src=sparkle.png alt=""><code>/poll create</code><img src=sparkle.png alt=""><code>/setup status</code><img src=sparkle.png alt=""><code>/help</code><img src=sparkle.png alt=""></div></div>
-<section class=ed><div class=no>01</div><div class="body two"><div><h2>One star a night, if you show up.</h2><p>Run <code>/sky watch</code> once a night. Do the three little nightly tasks, keep the streak alive, and check your collection with <code>/sky view</code>. Miss a night and the streak resets, so maybe set a reminder.</p></div><figure class=fig><img src=mysky.webp alt="A player's sky in Lumo"><figcaption class=mono>Fig. 1. Ori's sky, a few weeks in</figcaption></figure></div></section>
-<section class=spot-band id=hunts><div><p class=mono>02 · Hunts · Beta</p><h2>Sometimes a star <em>fights back.</em></h2><p>Bring your three best stars to a hunt. Specials charge on the third move, ultimates on the eighth. Win, and the wild star might decide to stay.</p>
-<table class=rates><thead><tr><th>Rarity</th><th>Chance it joins you</th></tr></thead><tbody><tr><td>Common</td><td>15%</td></tr><tr><td>Uncommon</td><td>12%</td></tr><tr><td>Rare</td><td>8%</td></tr><tr><td>Radiant</td><td>5%</td></tr><tr><td>Celestial</td><td>3%</td></tr></tbody></table><div class=moonrow aria-hidden=true>{MOONROW}<span class=mono>A full moon makes a won star a little likelier to join</span></div></div><figure class=fig><img src=assets/hunt-battle.webp alt="A star hunt playing out, as Lumo animates it in Discord" width=480 height=360><figcaption class=mono>Fig. 2. A hunt, playing out. Animated by Lumo in Discord.</figcaption></figure></section>
-<section class=ed><div class=no>03</div><div class=body><h2>It also does the normal bot stuff.</h2><dl class=ledger>
+<div class=marquee aria-label="A few real Lumo commands"><div class=mq><code>/sky watch</code><img src=sparkle.png alt=""><code>/sky view</code><img src=sparkle.png alt=""><code>/sky hunt</code><img src=sparkle.png alt=""><code>/sky team</code><img src=sparkle.png alt=""><code>/sky boss</code><img src=sparkle.png alt=""><code>/play</code><img src=sparkle.png alt=""><code>/queue view</code><img src=sparkle.png alt=""><code>/game</code><img src=sparkle.png alt=""><code>/slots</code><img src=sparkle.png alt=""><code>/connect4</code><img src=sparkle.png alt=""><code>/rank</code><img src=sparkle.png alt=""><code>/top</code><img src=sparkle.png alt=""><code>/profile</code><img src=sparkle.png alt=""><code>/vote</code><img src=sparkle.png alt=""><code>/giveaway start</code><img src=sparkle.png alt=""><code>/poll create</code><img src=sparkle.png alt=""><code>/setup status</code><img src=sparkle.png alt=""><code>/help</code><img src=sparkle.png alt=""><code>/sky watch</code><img src=sparkle.png alt=""><code>/sky view</code><img src=sparkle.png alt=""><code>/sky hunt</code><img src=sparkle.png alt=""><code>/sky team</code><img src=sparkle.png alt=""><code>/sky boss</code><img src=sparkle.png alt=""><code>/play</code><img src=sparkle.png alt=""><code>/queue view</code><img src=sparkle.png alt=""><code>/game</code><img src=sparkle.png alt=""><code>/slots</code><img src=sparkle.png alt=""><code>/connect4</code><img src=sparkle.png alt=""><code>/rank</code><img src=sparkle.png alt=""><code>/top</code><img src=sparkle.png alt=""><code>/profile</code><img src=sparkle.png alt=""><code>/vote</code><img src=sparkle.png alt=""><code>/giveaway start</code><img src=sparkle.png alt=""><code>/poll create</code><img src=sparkle.png alt=""><code>/setup status</code><img src=sparkle.png alt=""><code>/help</code><img src=sparkle.png alt=""></div></div>
+<section class="ed demo" id=demo><div class=no>01</div><div class="body two"><div><h2>Try Lumo right here.</h2><p>Tap a command to see what Lumo answers in Discord. These are Lumo's real replies, played from a script, so nothing gets sent anywhere.</p><p class=mono>A pretend server · #night-sky</p></div>
+<div class="dc-window demo-win" data-demo data-rank=assets/demo/rank-card-en.webp><div class=dc-bar><span><span class=hash>#</span>night-sky</span><span class=demo-who><img src=assets/robot/wave-96.webp width=22 height=22 alt="">Lumo</span></div><div class=demo-log aria-live=polite></div><p class=demo-toast role=status hidden></p>
+<div class=demo-cmds role=group aria-label="Try a command"><button type=button data-cmd=watch>/sky watch</button><button type=button data-cmd=daily>/coins daily</button><button type=button data-cmd=rank>/rank</button><button type=button data-cmd=vote>/vote</button><button type=button data-cmd=play>/play</button></div></div></div></section>
+<!--demo-data--><script type=application/json id=demo-data>DEMODATA</script><!--/demo-data--><script src=demo.js defer></script>
+<section class=ed><div class=no>02</div><div class="body two"><div><h2>One star a night, if you show up.</h2><p>Run <code>/sky watch</code> once a night. Do the three little nightly tasks, keep the streak alive, and check your collection with <code>/sky view</code>. Miss a night and the streak resets, so maybe set a reminder.</p></div><figure class=fig><img src=mysky.webp alt="A player's sky in Lumo"><figcaption class=mono>Fig. 1. Ori's sky, a few weeks in</figcaption></figure></div></section>
+<section class=spot-band id=hunts><div><p class=mono>03 · Hunts · Beta</p><h2>Sometimes a star <em>fights back.</em></h2><p>Bring your three best stars to a hunt. Specials charge on the third move, ultimates on the eighth. Win, and the wild star might decide to stay.</p>
+<table class=rates><thead><tr><th>Rarity</th><th>Chance it joins you</th></tr></thead><tbody><tr><td>Common</td><td>15%</td></tr><tr><td>Uncommon</td><td>12%</td></tr><tr><td>Rare</td><td>8%</td></tr><tr><td>Radiant</td><td>5%</td></tr><tr><td>Celestial</td><td>3%</td></tr></tbody></table><div class=moonrow aria-hidden=true>{MOONROW}<span class=mono>A full moon makes a won star a little likelier to join</span></div></div><figure class=fig><img src=assets/hunt-battle.webp alt="A star hunt playing out, as Lumo animates it in Discord" width=480 height=360 loading=lazy decoding=async><figcaption class=mono>Fig. 2. A hunt, playing out. Animated by Lumo in Discord.</figcaption></figure></section>
+<section class=ed><div class=no>04</div><div class=body><h2>It also does the normal bot stuff.</h2><dl class=ledger>
 <dt>Music</dt><dd>SoundCloud in your voice channel, with a queue anyone in the channel can push buttons on.</dd>
 <dt>Games &amp; Coins</dt><dd>Blackjack, slots, poker and a few more, all on Lumo Coins. Play money, nothing real.</dd>
 <dt>Levels</dt><dd>Chat XP, a <code>/rank</code> card and level roles if you want them.</dd>
 <dt>Server tools</dt><dd>Giveaways, polls, a join role, welcome cards, logs, purge, a Void bait channel for spam bots, and a light AutoMod.</dd></dl>
 <p style="margin-top:20px"><a href=features.html>See everything on the features page →</a></p></div></section>
 <section class=cta><img src=happy-256.webp alt="" width=96><div><span class=kicker>Premium</span><h2>AI-powered chat for the whole server.</h2><p>It can look at pictures, search the web, talk in voice and make images. $4.99 a month per server on Ko-fi, cancel whenever.</p></div><a class=btn href=premium.html>See Premium</a></section>'''
+import json as _j
+_DD=_j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'demo-data.json')));_DU=_j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'demo_ui.json')))
+def demo_json(l): d=dict(_DD[l]);d['ui']=_DU[l];return _j.dumps(d,ensure_ascii=False).replace('</','<\\/')
+HOME=HOME.replace('DEMODATA',demo_json('en'))
 open(f'{OUT}/index.html','w').write(head('Home','L-home')+site_header('index.html')+'<main>'+HOME+'</main>'+FOOT+TAIL)
 
 # ---------- status ----------
@@ -164,17 +174,17 @@ STATUS=f'''<section class="hero"><div><p class=mono>Status</p><h1 id=st-h>Checki
 <p class=mono style="margin-top:16px">This page checks Lumo live every time you open it.</p></div></section>
 <section class=cta><img src=assets/robot/surprised-96.webp alt="" width=72><div><h2>Something not working?</h2><p>Tell us on Discord and Ori will take a look.</p></div><a class=btn href="{SUPPORT}" rel=noopener>Support server</a></section>
 <script>
-(function(){{var $=function(i){{return document.getElementById(i)}};function set(i,ok,t){{var e=$(i);e.textContent=t;e.className='pill '+(ok?'ok':'bad')}}
+(function(){{var T=function(s){{try{{var d=JSON.parse(document.getElementById('lumo-t').textContent);return d[s]||s}}catch(e){{return s}}}};var $=function(i){{return document.getElementById(i)}};function set(i,ok,t){{var e=$(i);e.textContent=t;e.className='pill '+(ok?'ok':'bad')}}
 fetch('https://dashboard.lumobot.org/api/public/status').then(function(r){{return r.json()}}).then(function(d){{
 var up=d.ready&&d.gateway_connected,ai=d.ai=='ok',mu=d.music=='ok';
-$('st-h').innerHTML=up?(ai&&mu?'Lumo is <em>online.</em>':'Lumo is <em>partly down.</em>'):(d.gateway_connected===false&&d.started_at?'Lumo is <em>starting.</em>':'Lumo is <em>offline.</em>');
-$('st-s').textContent=!up?"Lumo can't reach Discord right now. It usually comes back on its own within a few minutes.":ai&&mu?'Everything is working: commands, music and AI chat.':!ai&&!mu?'Commands work, but AI chat and music are having trouble right now.':!ai?'Most things work, but AI chat is having trouble and may be slow.':'Most things work, but music is having trouble and may not start.';
+$('st-h').innerHTML=up?(ai&&mu?T('Lumo is <em>online.</em>'):T('Lumo is <em>partly down.</em>')):(d.gateway_connected===false&&d.started_at?T('Lumo is <em>starting.</em>'):T('Lumo is <em>offline.</em>'));
+$('st-s').textContent=!up?T("Lumo can't reach Discord right now. It usually comes back on its own within a few minutes."):ai&&mu?T('Everything is working: commands, music and AI chat.'):!ai&&!mu?T('Commands work, but AI chat and music are having trouble right now.'):!ai?T('Most things work, but AI chat is having trouble and may be slow.'):T('Most things work, but music is having trouble and may not start.');
 $('st-bot').src=up?'assets/robot/thumbsup-256.webp':'assets/robot/sleeping-96.webp';
 $('st-ping').textContent=d.latency_ms!=null?d.latency_ms+' ms':'—';
 $('st-since').textContent=d.started_at?new Date(d.started_at*1000).toLocaleString():'—';
 $('st-at').textContent=d.checked_at?new Date(d.checked_at*1000).toLocaleTimeString():'—';
-set('p-gw',up,up?'Working':'Down');set('p-ai',ai,ai?'Working':'Trouble');set('p-mu',mu,mu?'Working':'Trouble');set('p-db',true,'Working');
-}}).catch(function(){{$('st-h').textContent="Couldn't reach Lumo";$('st-s').textContent='The status check did not answer. Try again in a minute.';['p-gw','p-ai','p-mu','p-db'].forEach(function(i){{$(i).textContent='Unknown'}})}})}})();
+set('p-gw',up,up?T('Working'):T('Down'));set('p-ai',ai,ai?T('Working'):T('Trouble'));set('p-mu',mu,mu?T('Working'):T('Trouble'));set('p-db',true,T('Working'));
+}}).catch(function(){{$('st-h').textContent=T("Couldn't reach Lumo");$('st-s').textContent=T('The status check did not answer. Try again in a minute.');['p-gw','p-ai','p-mu','p-db'].forEach(function(i){{$(i).textContent=T('Unknown')}})}})}})();
 </script>'''
 for a in['assets/robot/thinking-256.webp','assets/robot/thumbsup-256.webp','assets/robot/sleeping-96.webp','assets/robot/surprised-96.webp']: asset(a)
 open(f'{OUT}/status.html','w').write(head('Status','L-status')+site_header('status.html')+'<main>'+STATUS+'</main>'+FOOT+TAIL)
@@ -219,7 +229,7 @@ import ctafix
 HERE=os.path.dirname(os.path.abspath(__file__))
 for x in ['base.css','theme.js','sky.js']:
     if os.path.exists(os.path.join(HERE,x)): shutil.copy(os.path.join(HERE,x),OUT)
-shutil.copytree(os.path.join(HERE,'assets'),OUT+'/assets',dirs_exist_ok=True)
+if os.path.isdir(os.path.join(HERE,'assets')): shutil.copytree(os.path.join(HERE,'assets'),OUT+'/assets',dirs_exist_ok=True)
 pass  # holiday outfits: option B redrawn waving Lumo for large poses, plain for small (assets/robot/<holiday>/)
 CAPFIX=[("A hunt, playing out. Animated by Lumo in Discord.","A hunt playing out in Discord")]
 for f in _g.glob(OUT+'/*.html'):
@@ -231,3 +241,6 @@ for f in _g.glob(OUT+'/*.html'):
     open(f,'w').write(t)
 print('done',len(used))
 bad=orrery_check(); assert not bad, bad; print('orrery ok')
+
+import subprocess,sys as _s
+subprocess.run([_s.executable,os.path.join(HERE,'langs.py')],check=True)

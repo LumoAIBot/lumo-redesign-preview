@@ -1,7 +1,7 @@
 """Overlap/overflow audit for every preview page. Fails (exit 1) on horizontal scroll, elements past the
 viewport, text boxes overlapping each other or images, plate captions overlapping the plate, and orrery
 labels outside their SVG. Usage: python3 audit.py [base_url] [widths]"""
-import sys, glob, os
+import sys, glob, os, re
 from playwright.sync_api import sync_playwright
 BASE=sys.argv[1] if len(sys.argv)>1 else 'http://localhost:8811'
 ROOT='/workspace/lumo-redesign-preview'
@@ -28,7 +28,8 @@ const mas=[...document.querySelectorAll('img')].filter(i=>vis(i)&&/robot\/|wave-
 const grp=new Map();for(const i of mas){const c=i.closest('.h-mini')||i.closest('section.cta')||i.closest('.final-cta,section,figure,article,aside,.card,header,footer,.dash-side,li')||document.body;grp.set(c,(grp.get(c)||0)+1)}
 for(const[c,n]of grp)if(n>1)out.push('duplicate-mascot x'+n+' in '+c.tagName+'.'+c.className);
 return [...new Set(out)]}'''
-pages=sorted(os.path.basename(f) for f in glob.glob(ROOT+'/*.html'))
+pages=sorted(os.path.relpath(f,ROOT) for d in ('','es/','pt-br/','ja/') for f in glob.glob(ROOT+'/'+d+'*.html'))
+if os.environ.get('PAGES'): pages=[p for p in pages if re.search(os.environ['PAGES'],p)]
 # (label, context kwargs, ignore meta viewport)
 CONFIGS=[(f'w{w}',dict(viewport={'width':w,'height':900}),False) for w in WIDTHS]
 if len(sys.argv)<=2:
