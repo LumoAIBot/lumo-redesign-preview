@@ -85,6 +85,35 @@ fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-w
 .d-scard .d-acts{margin:0;padding:0}
 .d-foot{text-align:center;color:var(--mute);font-size:13px;padding:20px 4vw 28px}
 .d-tabs{display:none}
+/* extra pages (reaction roles, customize, levels, automod, AI channels, welcome, giveaways, polls, more) */
+.d-field textarea{font:15px 'IBM Plex Sans';padding:9px 11px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;width:100%;min-width:0;resize:vertical}
+.d-field input[type=file]{padding:7px}.d-field small{font-size:12px}
+.d-narrow{max-width:180px}
+.d-row3{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}.d-row3>.d-field{flex:1 1 160px}.d-row3>.d-narrow{flex:0 1 150px}.d-row3>.d-acts{margin:0;padding:0}
+.d-check input{margin-top:3px;flex:none;accent-color:var(--acc)}
+.d-note{border:1px dashed var(--line);border-radius:10px;padding:10px 12px;font-size:14px;max-width:none}.d-note p{max-width:none}
+.d-rows{list-style:none;padding:0;margin:8px 0}.d-rows li{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.d-rows li .btn{margin-left:auto}
+.d-lvl{font:500 12.5px 'IBM Plex Mono',monospace;color:var(--gold);min-width:64px}
+.d-amgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px}
+.d-pl{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}.d-pc h3{font-size:19px}
+.d-opts{list-style:none;padding:0;margin:8px 0}.d-opts li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:4px 0}.d-barx{color:var(--gold);letter-spacing:-1px}
+.d-opin{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:10px}
+.d-dc{background:#313338;color:#dbdee1;border-radius:10px;padding:12px 14px;max-width:560px;font-size:14.5px}
+.d-dc-h{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}.d-dc-h b{color:#fff}
+.d-dc-av{width:32px;height:32px;border-radius:50%;background:#C9A227;color:#1b1b1f;display:grid;place-items:center;font:600 14px Fraunces}
+.d-dc-tag{background:#5865F2;color:#fff;font-size:10px;padding:1px 5px;border-radius:4px}
+.d-dc-e{border-left:4px solid #C9A227;background:#2b2d31;border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}.d-dc-e b{color:#fff}
+.d-dc-r{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.d-dc-r span{background:#2b2d31;border:1px solid #4e5058;border-radius:8px;padding:1px 8px;font-size:13px}
+.d-dc .d-muted{color:#b5bac1}
+.d-ment{background:rgba(88,101,242,.3);color:#c9cdfb;border-radius:3px;padding:0 3px}
+.d-cpl{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:4px 12px;margin-top:6px}
+.d-c0{color:#FF6B35}.d-c1{color:#FF6B9D}.d-c2{color:#00B4D8}.d-c3{color:#2ECC71}.d-c4{color:#C77DFF}.d-c5{color:#ED4245}.d-c6{color:#7FDBFF}.d-c7{color:#F1C40F}.d-c8{color:#FF8DC7}.d-c9{color:#a5acff}.d-c10{color:#00F5D4}.d-c11{color:#EB459E}
+.d-wc{display:flex;gap:18px;align-items:center;max-width:560px;aspect-ratio:1000/350;padding:0 6%;border-radius:14px;background:radial-gradient(circle at 80% 20%,#3a3270,#141327 70%);color:#fff;border:1px solid var(--line)}
+.d-wc b{display:block;font:600 clamp(18px,3.4vw,28px) Fraunces}.d-wc small{color:#cfd0ea;font-size:clamp(12px,1.8vw,15px)}
+.d-wc-av{flex:none;width:clamp(48px,12vw,92px);aspect-ratio:1;border-radius:50%;background:#C9A227;color:#1b1b1f;display:grid;place-items:center;font:600 clamp(20px,4vw,36px) Fraunces;border:3px solid #fff}
+.d-wcmsg{background:#313338;color:#dbdee1;border-radius:8px;padding:8px 12px;max-width:560px}
+.d-more{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:10px}
+.d-ml{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink);padding:12px 14px}
 /* bobbing icons on dashboard + Features: always on (even with reduced motion), per the rule */
 .bob{animation:bob 3s ease-in-out infinite!important}
 .d-qs:nth-child(2n) .bob,.d-fc:nth-child(2n) .bob{animation-delay:-1.5s!important}
@@ -108,3 +137,6 @@ fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-w
  .d-card{padding:16px}
  .d-lb li{grid-template-columns:40px minmax(0,1fr);}.d-lb .mono{grid-column:2}
 }
+.d-ph>div{min-width:0;flex:1 1 auto}
+.d-ph-art.plate{width:110px!important;margin:0!important;container-type:normal}.d-ph-art.plate .bot-rig{width:72%}.d-ph-art.plate .glow{display:none}
+.d-set form.d-row3{flex-direction:row;align-items:flex-end}
