@@ -2,7 +2,7 @@ from moons import orbit_moon
 """Hand-built SVG orrery for the hero plates. Lumo is the sun; one body per orbit, no crossings,
 periods follow Kepler (T ~ a^1.5), everything turns the same way. check() asserts the clearances."""
 import random, math
-C=200; LUMO_R=40; HI=186; MIN_GAP=3
+C=200; LUMO_R=29; HI=186; MIN_GAP=3
 CHECK=[]
 SHADE='#05060f'
 def soft(uid): return f'url(#sf{uid})'

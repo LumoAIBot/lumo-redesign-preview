@@ -253,8 +253,8 @@ details.menu{border:0;padding:0}
 @media(max-width:760px){.orrery .deg{display:none}}
 .plate img.bot{width:30%!important}.plate .glow{inset:31%!important}
 .plate{width:min(480px,86vw)!important}.plate img.bot{width:24%!important}.plate .glow{inset:34%!important}
-.plate img.bot{animation:none!important;width:19%!important;filter:drop-shadow(0 0 14px rgba(255,214,120,.35))}
-.plate{width:min(560px,90vw)!important}.plate .glow{inset:37%!important;background:radial-gradient(closest-side,rgba(255,210,120,.28),transparent)!important}
+.plate img.bot{animation:none!important;width:13.5%!important;filter:drop-shadow(0 0 10px rgba(255,214,120,.35))}
+.plate{width:min(560px,90vw)!important}.plate .glow{inset:40.5%!important;background:radial-gradient(closest-side,rgba(255,210,120,.28),transparent)!important}
 .orrery .plabel{font:500 5.2px 'IBM Plex Mono',monospace;letter-spacing:.06em;fill:var(--ink-o);opacity:.8;text-transform:uppercase}
 @media(max-width:760px){.orrery .plabel{display:none}}
 @media(max-width:760px){.plate{width:80vw!important}}
@@ -318,7 +318,7 @@ svg.moon .m-dark{fill:#1b1d2b}svg.moon .m-rim{stroke:#f1e2b4;stroke-opacity:.35;
 .lumo-fx{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 
 /* living Lumo */
-.plate .bot-rig{position:relative;z-index:1;display:block;width:19%;transform-origin:50% 80%;transition:transform .6s cubic-bezier(.2,.7,.2,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.plate .bot-rig{position:relative;z-index:1;display:block;width:13.5%;transform-origin:50% 80%;transition:transform .6s cubic-bezier(.2,.7,.2,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .plate .bot-rig img.bot{width:100%!important;display:block}
 .bot-lid{position:absolute;border-radius:50%;background:radial-gradient(closest-side,#2fe6df 60%,rgba(47,230,223,0));transform:scaleY(0);transform-origin:50% 0;pointer-events:none}
 .bot-lid::after{content:"";position:absolute;left:16%;right:16%;top:38%;height:28%;border-bottom:2px solid #062a2e;border-radius:0 0 50% 50%}
