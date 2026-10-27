@@ -114,7 +114,7 @@
 <header><button class="cmd-name" title="コピー" type="button">/top</button><span class="badges"><span class="badge b-any">全員</span></span></header>
 <p>このサーバーのランキング：メッセージ数、ボイス時間、レベル、星の観測者。メッセージ・ボイス時間・レベル・星の観測者から選びます。レベルは上位5人を画像で表示。星の観測者は Starkeepers のプレイヤーを空の光で並べます。</p><ul class="args"><li><code class="arg">sort?</code><span>ランキングの基準</span></li></ul>
 </article></div></section>
-<section class="cmd-group"><h2> Giveaways, polls &amp; reminders <small>13</small></h2><div class="cmd-grid"><article class="cmd">
+<section class="cmd-group"><h2>ギブアウェイ・投票・リマインダー <small>13</small></h2><div class="cmd-grid"><article class="cmd">
 <header><button class="cmd-name" title="コピー" type="button">/giveaway start</button><span class="badges"><span class="badge b-admin">管理者</span></span></header>
 <p>このチャンネル（または別のチャンネル）でプレゼント企画を始めます。管理者専用。参加・取り消しボタンつきで投稿されます。期間は30m、2h、1d、1d12hのように指定（1分〜30日）。当選者はサーバーに残っている人から公平にランダムで選ばれます。同時に10件まで。無料、AIなし。</p><ul class="args"><li><code class="arg req">prize</code><span>賞品</span></li><li><code class="arg req">duration</code><span>期間（30m、2h、1d、1d12hなど。1分〜30日）</span></li><li><code class="arg">winners?</code><span>当選者数（1〜20、初期値1）</span></li><li><code class="arg">role?</code><span>このロールを持つ人だけ参加可能（任意）</span></li><li><code class="arg">channel?</code><span>投稿先（初期値：このチャンネル）</span></li></ul>
 </article>
@@ -151,20 +151,20 @@
 <p>このサーバーの受付中の投票と最近締め切ったものを、あなただけに表示します。</p>
 </article>
 <article class="cmd">
-<header><button class="cmd-name" title="コピー" type="button">/reminder create</button><span class="badges"><span class="badge b-admin">Manage Server</span></span></header>
-<p>Set a reminder that posts a card at a set time (24-hour). Repeats every day, every 2 days, on weekdays, on chosen days or once, in your time zone (daylight saving handled).</p><ul class="args"><li><code class="arg">channel</code></li><li><code class="arg">time</code></li><li><code class="arg">repeat</code></li><li><code class="arg">timezone?</code></li><li><code class="arg">start_date?</code></li></ul>
+<header><button class="cmd-name" title="コピー" type="button">/reminder create</button><span class="badges"><span class="badge b-admin">サーバー管理</span></span></header>
+<p>決まった時刻（24時間表記）にカードを投稿するリマインダーを作成。毎日、2日ごと、平日、選んだ曜日、または1回だけ。タイムゾーン対応（夏時間も自動）。</p><ul class="args"><li><code class="arg">channel</code></li><li><code class="arg">time</code></li><li><code class="arg">repeat</code></li><li><code class="arg">timezone?</code></li><li><code class="arg">start_date?</code></li></ul>
 </article>
 <article class="cmd">
-<header><button class="cmd-name" title="コピー" type="button">/reminder test</button><span class="badges"><span class="badge b-admin">Manage Server</span></span></header>
-<p>Preview one reminder just for you: its card (animated if GIF), channel, time, repeat, next send and role ping.</p><ul class="args"><li><code class="arg">name</code></li></ul>
+<header><button class="cmd-name" title="コピー" type="button">/reminder test</button><span class="badges"><span class="badge b-admin">サーバー管理</span></span></header>
+<p>リマインダーを自分だけにプレビュー：カード（GIFならアニメ）、チャンネル、時刻、繰り返し、次回送信、ロールのメンション。</p><ul class="args"><li><code class="arg">name</code></li></ul>
 </article>
 <article class="cmd">
-<header><button class="cmd-name" title="コピー" type="button">/reminder upload</button><span class="badges"><span class="badge b-admin">Manage Server</span></span></header>
-<p>Upload a banner or icon (PNG, JPG, WEBP or an animated GIF). Pick a reminder by name, or leave it empty for the server look.</p><ul class="args"><li><code class="arg">what</code></li><li><code class="arg">image</code></li><li><code class="arg">name?</code></li></ul>
+<header><button class="cmd-name" title="コピー" type="button">/reminder upload</button><span class="badges"><span class="badge b-admin">サーバー管理</span></span></header>
+<p>バナーやアイコンをアップロード（PNG、JPG、WEBP、アニメGIF）。名前でリマインダーを選ぶか、空欄でサーバー全体のデザインに。</p><ul class="args"><li><code class="arg">what</code></li><li><code class="arg">image</code></li><li><code class="arg">name?</code></li></ul>
 </article>
 <article class="cmd">
-<header><button class="cmd-name" title="コピー" type="button">/reminder list</button><span class="badges"><span class="badge b-admin">Manage Server</span></span></header>
-<p>Manage every reminder: pause, edit, test, delete, role ping, its look and the server look.</p>
+<header><button class="cmd-name" title="コピー" type="button">/reminder list</button><span class="badges"><span class="badge b-admin">サーバー管理</span></span></header>
+<p>すべてのリマインダーを管理：一時停止、編集、テスト、削除、ロールのメンション、個別とサーバーのデザイン。</p>
 </article></div></section>
 <section class="cmd-group"><h2>サーバー設定 <small>9</small></h2><div class="cmd-grid"><article class="cmd">
 <header><button class="cmd-name" title="コピー" type="button">/setup status</button><span class="badges"><span class="badge b-admin">管理者</span></span></header>
@@ -220,4 +220,4 @@
 </div></section></main><footer class=colophon><div class=c1><img src="../assets/robot/wave-96.webp" width=44 alt=""><div><b>Lumo</b><p>夜空の入ったDiscordボット。サポートサーバーの助けを借りながら、Oriyiがひとりで作っています。</p></div></div>
 <div><p class=mono>見る</p><a href="getting-started.html">はじめに</a><a href="features.html">機能</a><a href="starkeepers.html">遊び方</a><a href="commands.html">コマンド</a><a href="premium.html">Premium</a><a href="changelog.html">更新履歴</a></div>
 <div><p class=mono>ヘルプ</p><a href="faq.html">FAQ</a><a href="../dashboard-preview/servers.html">ダッシュボードを開く</a><a href="dashboard-info.html">ダッシュボードについて</a><a href="https://discord.gg/KZjebts36C" rel=noopener>サポートサーバー</a><a href="https://discord.com/users/1022200760018161684" rel=noopener>Oriにメッセージ</a><a href="faq.html#claim">Premiumを有効化</a><a href="faq.html#permissions">権限の説明</a><a href="https://top.gg/bot/1545140271073722378/vote" rel=noopener>Top.ggで投票</a></div>
-<div><p class=mono>細かい決まりごと</p><a href="status.html">稼働状況</a><a href="../terms.html">規約</a><a href="../privacy.html">プライバシー</a><a href="https://github.com/OniSyris" rel=noopener>@OniSyris</a></div><p class="mono small" style="grid-column:1/-1;opacity:.75;margin-top:12px">Not affiliated with Discord. Lumo Coins are play money with no real-world value. Music: Outer Space Loop by wipics (CC0).</p></footer><script>var q=document.getElementById("q");q&&q.addEventListener("input",function(){var v=q.value.toLowerCase();document.querySelectorAll(".cmd").forEach(function(c){c.hidden=v&&c.textContent.toLowerCase().indexOf(v)<0})})</script><script src="../sky.js"></script><div class=pv-label>Preview, not live</div><script src="../theme.js"></script><script src="../assets/lumo-holiday.js"></script><script src="../mascot.js"></script><script src="../assets/lumo-stats.js"></script><!--L--><script src="../assets/lumo-lang.js"></script><!--/L--><script src="../assets/lumo-music.js" data-slot=".top .hr .theme-pop" data-src="../assets/audio/outer-space-loop.mp3" data-volume="0.16" data-fade="2.5"></script></body></html>
+<div><p class=mono>細かい決まりごと</p><a href="status.html">稼働状況</a><a href="../terms.html">規約</a><a href="../privacy.html">プライバシー</a><a href="https://github.com/OniSyris" rel=noopener>@OniSyris</a></div><p class="mono small" style="grid-column:1/-1;opacity:.75;margin-top:12px">Discordとは提携していません。Lumo Coinsは現実の価値がない遊び用の通貨です。音楽：Outer Space Loop by wipics（CC0）。</p></footer><script>var q=document.getElementById("q");q&&q.addEventListener("input",function(){var v=q.value.toLowerCase();document.querySelectorAll(".cmd").forEach(function(c){c.hidden=v&&c.textContent.toLowerCase().indexOf(v)<0})})</script><script src="../sky.js"></script><div class=pv-label>Preview, not live</div><script src="../theme.js"></script><script src="../assets/lumo-holiday.js"></script><script src="../mascot.js"></script><script src="../assets/lumo-stats.js"></script><!--L--><script src="../assets/lumo-lang.js"></script><!--/L--><script src="../assets/lumo-music.js" data-slot=".top .hr .theme-pop" data-src="../assets/audio/outer-space-loop.mp3" data-volume="0.16" data-fade="2.5"></script></body></html>
