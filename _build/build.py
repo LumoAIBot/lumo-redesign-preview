@@ -16,7 +16,7 @@ def asset(src):
     return src
 def link(h):
     if not h: return h
-    if h.startswith('https://dashboard.lumobot.org'): return 'dashboard-servers.html'
+    if h.startswith('https://dashboard.lumobot.org'): return 'dashboard-preview/servers.html'
     if h in('/','index.html','./'): return 'index.html'
     m=re.match(r'^/?([a-z0-9-]+\.html)(#.*)?$',h)
     if m: return RENAME.get(m.group(1),m.group(1))+(m.group(2) or '')
@@ -67,8 +67,8 @@ def site_header(active):
     return f'''<header class=top><a class=brand href=index.html><img class=logo-head src=assets/logo.webp width=30 height=30 alt="">Lumo</a><nav class=main-nav>{nav}</nav><div class=hr><a class="btn sm" href="{INVITE}" rel=noopener>Add to Discord</a>'''+THEMEPOP+f'''<details class=menu><summary class=hbtn aria-label=Menu>Menu</summary><div class=menu-p>{"".join(f'<a href="{h}">{l}</a>' for h,l,i in HEADNAV)}<a href="{INVITE}" rel=noopener>Add to Discord</a></div></details></div></header>'''
 FOOT=f'''<footer class=colophon><div class=c1><img src=wave-96.webp width=44 alt=""><div><b>Lumo</b><p>A Discord bot with a night sky in it. Made by Oriyi, one person, with help from the support server.</p></div></div>
 <div><p class=mono>Explore</p><a href=getting-started.html>Get started</a><a href=features.html>Features</a><a href=starkeepers.html>How to play</a><a href=commands.html>Commands</a><a href=premium.html>Premium</a><a href=changelog.html>Changelog</a></div>
-<div><p class=mono>Help</p><a href=faq.html>FAQ</a><a href=dashboard-info.html>About the dashboard</a><a href="{SUPPORT}" rel=noopener>Support server</a><a href="{ORI}" rel=noopener>Message Ori</a><a href=faq.html#claim>Claim Premium</a><a href="https://top.gg/bot/1545140271073722378/vote" rel=noopener>Vote on Top.gg</a></div>
-<div><p class=mono>The fine print</p><a href=status.html>Status</a><a href=terms.html>Terms</a><a href=privacy.html>Privacy</a><a href="https://github.com/OniSyris" rel=noopener>@OniSyris</a></div></footer>'''
+<div><p class=mono>Help</p><a href=faq.html>FAQ</a><a href=dashboard-preview/servers.html>Open dashboard</a><a href=dashboard-info.html>About the dashboard</a><a href="{SUPPORT}" rel=noopener>Support server</a><a href="{ORI}" rel=noopener>Message Ori</a><a href=faq.html#claim>Claim Premium</a><a href=faq.html#permissions>Permissions explained</a><a href="https://top.gg/bot/1545140271073722378/vote" rel=noopener>Vote on Top.gg</a></div>
+<div><p class=mono>The fine print</p><a href=status.html>Status</a><a href=terms.html>Terms</a><a href=privacy.html>Privacy</a><a href="https://github.com/OniSyris" rel=noopener>@OniSyris</a></div><p class="mono small" style="grid-column:1/-1;opacity:.75;margin-top:12px">Not affiliated with Discord. Lumo Coins are play money with no real-world value. Music: Outer Space Loop by wipics (CC0).</p></footer>'''
 TAIL='<script src=sky.js></script><div class=pv-label>Preview, not live</div><script src=theme.js></script><script src=assets/lumo-holiday.js></script><script src=mascot.js></script><script src=assets/lumo-stats.js></script><script src=assets/lumo-music.js data-slot=".top .hr .theme-pop" data-src="assets/audio/outer-space-loop.mp3" data-volume="0.16" data-fade="2.5"></script></body></html>'
 from moons import moon_svg
 MOONROW=''.join(moon_svg(f,w,22,f'r{k}') for k,(f,w) in enumerate([(.22,0),(.6,0),(1,0),(.6,1),(.22,1)]))
@@ -189,41 +189,7 @@ set('p-gw',up,up?T('Working'):T('Down'));set('p-ai',ai,ai?T('Working'):T('Troubl
 for a in['assets/robot/thinking-256.webp','assets/robot/thumbsup-256.webp','assets/robot/sleeping-96.webp','assets/robot/surprised-96.webp']: asset(a)
 open(f'{OUT}/status.html','w').write(head('Status','L-status')+site_header('status.html')+'<main>'+STATUS+'</main>'+FOOT+TAIL)
 
-# ---------- dashboard mock ----------
-DNAV=[('dashboard.html','Overview'),('dashboard-starkeepers.html','Starkeepers'),('dashboard-features.html','Features'),('dashboard-settings.html','Settings')]
-def dash(fn,title,helper,pose,body,server=True):
-    side=''.join(f'<a href="{h}"{" class=on" if h==fn else ""}>{l}</a>' for h,l in DNAV)
-    side+='<span class=sep></span><span class=off title="Not part of this preview">Reaction roles</span><span class=off title="Not part of this preview">Customize</span><span class=off title="Not part of this preview">Economy</span><a href=dashboard-servers.html>Switch server</a>'
-    hdr=f'''<header class="top app"><a class=brand href=index.html><img class=logo-head src=assets/logo.webp width=30 height=30 alt="">Lumo</a><span class="mono crumb">Dashboard{" · The Night Owls" if server else ""} <span class=badge>Beta</span></span><div class=hr><a class="btn sm" href="https://dashboard.lumobot.org" rel=noopener>Open dashboard</a>'''+THEMEPOP+f'''<span class=prof><span class=av>O</span><span class=pn>Oriyi</span></span></div></header>'''
-    ph=f'<div class=ph><img src="{pose}" alt="" width=72><div><p class=mono>{"The Night Owls" if server else "Signed in as Oriyi"}</p><h1>{title}</h1><p class=help>{helper}</p></div></div>'
-    if server:
-        main=f'<div class=app-wrap><aside class=side>{side}</aside><main class=app-main>{ph}{body}</main></div>'
-    else: main=f'<main class="app-main solo">{ph}{body}</main>'
-    open(f'{OUT}/{fn}','w').write(head(title+' · Dashboard','L-app')+hdr+main+'<footer class=app-foot><a href=privacy.html>Privacy</a> · <a href="'+SUPPORT+'" rel=noopener>Support</a> · <a href=index.html>Back to lumobot.org</a></footer>'+TAIL)
-for a in['assets/robot/working-96.webp','assets/robot/wave-96.webp','assets/robot/idea-96.webp','assets/robot/happy-96.webp']: asset(a)
-def row(icon,name,desc,on,tag='',delay=0):
-    t=f' <span class=badge>{tag}</span>' if tag else ''
-    return f'<div class=row><img class="px bob" src={icon} style="animation-delay:{delay}s" alt=""><div><b>{name}{t}</b><p>{desc}</p></div><span class="tg{" on" if on else ""}" role=switch aria-checked={"true" if on else "false"}></span></div>'
-dash('dashboard-servers.html','Pick a server','Choose the server you want to set up. Only servers you manage are shown.','assets/robot/wave-96.webp',
- '<div class=servers><a class=srv href=dashboard.html><span class=sav>NO</span><span><b>The Night Owls</b><small>Lumo is here · Manage Server</small></span><span class=go>Open →</span></a><a class=srv href=dashboard.html><span class=sav>SG</span><span><b>Sample guild</b><small>Lumo is here · Administrator</small></span><span class=go>Open →</span></a><a class="srv off" href="'+INVITE+'" rel=noopener><span class=sav>+</span><span><b>Another server</b><small>Lumo isn\'t here yet</small></span><span class=go>Add Lumo</span></a></div><p class="mono note">Server names on this page are placeholders.</p>',server=False)
-dash('dashboard.html','Overview','How your server is doing and what to do next.','salute-192.webp',
- '<section class=spot><img src=mysky.webp alt="The server sky"><div><p class=mono>Starkeepers</p><h2>Your server\'s sky</h2><p>The shared night sky your members build together.</p><a class="btn ghost sm" href=dashboard-starkeepers.html>Open Starkeepers</a></div></section>'
- '<h2 class=sec>Setup checklist</h2><p class=help>The same checklist as <code>/setup status</code>: what is set up, what to fix next and the command that fixes it.</p><ol class=check>'
- '<li class=done><b>Welcome channel</b><span>Set</span></li><li class=done><b>Join role</b><span>Set</span></li><li><b>Server logs</b><span>Not set up · <code>/setup logs</code></span></li><li><b>Void bait channel</b><span>Not set up · <code>/setup void</code></span></li></ol>'
- '<h2 class=sec>Usage and plan</h2><dl class="ledger usage"><dt>AI replies today</dt><dd>0 of 100</dd><dt>Images and videos this month</dt><dd>0 of 15</dd><dt>Premium</dt><dd>Not active</dd><dt>House wallet</dt><dd>Placeholder</dd></dl>')
-dash('dashboard-features.html','Features','Turn things on or off for this server. Starkeepers, hunts, the observatory and bosses are on by default.','assets/robot/idea-96.webp',
- '<h2 class=sec>Starkeepers <span class=badge>Beta</span></h2><div class=rows>'+row('sparkle.png','Nightly catches','Members catch one free star a night with /sky watch.',1)+row('moon-eclipse.png','Hunts','Battle stars dulled by the Dimming with a team of up to three.',1,'',.6)+row('moon-full.png','Observatory &amp; bosses','Observatory upgrades and story boss fights.',1,'',1.2)+'</div>'
- '<h2 class=sec>Server</h2><div class=rows>'+row('sparkle.png','Level-up messages &amp; roles','Chat XP and level-up cards. Off until you turn it on.',0,'',.3)+row('sparkle.png','Welcome card','Greet new members with a card and your own words.',1,'',.9)+row('sparkle.png','AutoMod','Light filtering for invite links, scam links, mass mentions and spam bursts.',0,'',1.5)+row('moon-full.png','AI chat','AI-powered chat in the channels you pick.',0,'Premium',2)+'</div>')
-dash('dashboard-starkeepers.html','Starkeepers','The shared night sky your members build together. It updates by itself while this page is open.','assets/robot/happy-96.webp',
- '<figure class=fig><img src=assets/starkeepers-sky-1200.webp alt="The server sky with constellations"><figcaption class=mono>Fig. 1. The Night Owls\' sky (sample render)</figcaption></figure><dl class="ledger usage" style="margin-top:28px"><dt>Moon tonight</dt><dd>Placeholder</dd><dt>Tonight\'s server goal</dt><dd>Placeholder</dd><dt>Hunts</dt><dd>On</dd></dl>')
-asset('assets/starkeepers-sky-1200.webp')
-dash('dashboard-settings.html','Settings','Pick a channel or role from the lists and press Save. Changes apply right away.','assets/robot/working-96.webp',
- '<p class=jump><a href=#welcome>Welcome</a><a href=#autorole>Join role</a><a href=#logs>Server logs</a><a href=#language>Language</a></p>'
- '<section class=set id=welcome><h2>Welcome new members <span class="pill ok">On</span></h2><p class=help>Lumo greets new members in the channel you pick.</p><label>Welcome channel<small>Only channels Lumo can post in are listed.</small><select><option>#welcome</option></select></label><button class="btn sm">Save welcome channel</button></section>'
- '<section class=set id=autorole><h2>Join role <span class="pill bad">Off</span></h2><p class=help>Gives every new member a role automatically when they join.</p><label>Role for new members<small>Only roles below Lumo\'s own role can be handed out, so only those are listed.</small><select><option>Off (no join role)</option></select></label><button class="btn sm">Save join role</button></section>'
- '<section class=set id=logs><h2>Server logs <span class="pill bad">Off</span></h2><p class=help>A private record of what happens in your server, for moderators.</p><label>Log channel<select><option>No log channel yet</option></select></label><button class="btn sm">Save server logs</button></section>'
- '<section class=set id=language><h2>Language</h2><label>Lumo\'s language in this server<select><option>English</option></select></label><button class="btn sm">Save language</button></section>')
-
+# dashboard mock now lives in dashboard-preview/ (hand-built); old root pages are redirects
 import shutil,glob as _g
 import ctafix
 HERE=os.path.dirname(os.path.abspath(__file__))
